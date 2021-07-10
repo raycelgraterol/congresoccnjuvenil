@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31402.337
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CongresoJuvenil", "CongresoJuvenil\CongresoJuvenil.csproj", "{7D2E2924-211B-4AB5-A95C-60B40935402B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CongresoJuvenil", "CongresoJuvenil\CongresoJuvenil.csproj", "{7D2E2924-211B-4AB5-A95C-60B40935402B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CongresoJuvenilMVC", "CongresoJuvenilMVC\CongresoJuvenilMVC.csproj", "{A51FBA00-F905-47BD-8EA6-A18D671616F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{7D2E2924-211B-4AB5-A95C-60B40935402B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D2E2924-211B-4AB5-A95C-60B40935402B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D2E2924-211B-4AB5-A95C-60B40935402B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A51FBA00-F905-47BD-8EA6-A18D671616F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A51FBA00-F905-47BD-8EA6-A18D671616F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A51FBA00-F905-47BD-8EA6-A18D671616F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A51FBA00-F905-47BD-8EA6-A18D671616F7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
