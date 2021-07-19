@@ -461,3 +461,4 @@ C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Debug
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\RegisterPodCast.cshtml.g.cs
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ResultPageInfo.cshtml.g.cs
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\_ManageNavMoxa.cshtml.g.cs
+C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Debug\netcoreapp3.1\CongresoJuvenil2021.csproj.AssemblyReference.cache
