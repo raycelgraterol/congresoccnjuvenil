@@ -8,7 +8,6 @@ C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil\bin\Debug\net
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil\bin\Debug\netcoreapp3.1\CongresoJuvenil.pdb
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil\bin\Debug\netcoreapp3.1\CongresoJuvenil.Views.dll
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil\bin\Debug\netcoreapp3.1\CongresoJuvenil.Views.pdb
-C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil\obj\Debug\netcoreapp3.1\CongresoJuvenil.csproj.AssemblyReference.cache
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil\obj\Debug\netcoreapp3.1\CongresoJuvenil.AssemblyInfoInputs.cache
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil\obj\Debug\netcoreapp3.1\CongresoJuvenil.AssemblyInfo.cs
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil\obj\Debug\netcoreapp3.1\CongresoJuvenil.csproj.CoreCompileInputs.cache

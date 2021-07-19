@@ -1,0 +1,40 @@
+﻿@page
+@model CongresoJuvenil2021.Areas.Identity.Pages.Account.RegisterPodCastModel
+@{
+    ViewData["Title"] = "MOXA · A PRUEBA DE FUEGO";
+    Layout = "~/Views/Shared/_blackLayout.cshtml";
+}
+
+<h1 class="moxa-h1 mt-5 text-center">@ViewData["Title"]</h1>
+<p class="moxa-p text-center">CONGRESO DE JOVENES 2021</p>
+
+<div class="row">
+    <div class="col-md-12">
+        <form asp-route-returnUrl="@Model.returnUrl" method="post">
+            <h2 class="moxa-h2">PODCAST MOXA</h2>
+            <p class="moxa-p">
+                Escoge a cuáles podcast asistirás en este congreso.
+            </p>
+            <p class="moxa-p-light">
+                Selecciona:
+            </p>
+
+            <input type="hidden" name="CurrentUserId" value="@Model.CurrentUserId" />
+
+            <div class="row">
+                @for (var i = 0; i < Model.PodCasts.Count(); i++)
+                {
+                    <div class="col-12">
+                        <input type="checkbox" name="PodCastsChecked" value="@Model.PodCasts[i].Id" />
+                        <label class="ml-1 moxa-lbl-md" >@Model.PodCasts[i].Name</label>                        
+                    </div>
+                }
+            </div>
+            <div class="row">
+                <div class="col-12 text-right">
+                    <button type="submit" class="btn btn-light">SIGUIENTE </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
