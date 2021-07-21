@@ -79,12 +79,12 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
             {
                 foreach (var PodCastId in PodCastsChecked)
                 {
-                    //await _context.PodCastUsers.AddAsync(new PodCastUser()
-                    //{
-                    //    AppUserId = CurrentUserId,
-                    //    PodCastId = PodCastId
-                    //});
-                    //_context.SaveChanges();
+                    await _context.PodCastUsers.AddAsync(new PodCastUser()
+                    {
+                        AppUserId = CurrentUserId,
+                        PodCastId = PodCastId
+                    });
+                    _context.SaveChanges();
                 }
 
                 return LocalRedirect(returnUrl);

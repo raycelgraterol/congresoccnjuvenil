@@ -45,6 +45,7 @@ C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Relea
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\PubTmp\Out\CongresoJuvenil2021.dll
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\PubTmp\Out\CongresoJuvenil2021.runtimeconfig.json
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\PubTmp\Out\CongresoJuvenil2021.pdb
+C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\PubTmp\Out\MailKit.dll
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
@@ -97,8 +98,10 @@ C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Relea
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\PubTmp\Out\MimeKit.dll
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\PubTmp\Out\Newtonsoft.Json.dll
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\PubTmp\Out\NuGet.Frameworks.dll
+C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\PubTmp\Out\BouncyCastle.Crypto.dll
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\PubTmp\Out\System.Collections.Immutable.dll
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\PubTmp\Out\System.Composition.AttributedModel.dll
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\PubTmp\Out\System.Composition.Convention.dll
