@@ -45,7 +45,7 @@ namespace CongresoJuvenil2021.Models
         public int CongregationId { get; set; }
         public Congregation Congregation { get; set; }
 
-        public int TeamId { get; set; }
+        public int? TeamId { get; set; }
         public Team Team { get; set; }
 
         [NotMapped]

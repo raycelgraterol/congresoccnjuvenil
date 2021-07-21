@@ -5,10 +5,14 @@
     Layout = "~/Views/Shared/_blackLayout.cshtml";
 }
 
-<h1 class="moxa-h1 mt-5 text-center">@ViewData["Title"]</h1>
-
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-5">
+        <img class="moxa-img" src="~/img/banner-pc.png" alt="Alternate Text" />
+    </div>
+    <div class="col-md-5 offset-md-1">
+        
+        <h1 class="moxa-h1 mt-2 text-center">@ViewData["Title"]</h1>
+
         <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
             <p class="moxa-p text-center">
                 POR FAVOR INGRESA TODA LA INFORMACIÓN, PARA PARTICIPAR EN LAS
@@ -62,7 +66,7 @@
                 <div class="col-12 col-md-12">
                     <div class="form-group">
                         <label class="moxa-lbl-lg" asp-for="Input.NeedContact"></label>
-                        <label class="moxa-lbl-lg" >¿Deseas que nos coloquemos en contacto contigo?</label>
+                        <label class="moxa-lbl-lg">¿Deseas que nos coloquemos en contacto contigo?</label>
                         <div class="form-group">
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" asp-for="Input.NeedContact" id="inlineRadio1" checked="checked" value="true">

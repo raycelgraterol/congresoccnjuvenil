@@ -2,6 +2,10 @@ C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Relea
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\css\right-arrow.png
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\css\site.css
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\favicon.ico
+C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\img\banner-correo.png
+C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\img\banner-pc.png
+C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\img\banner-telefono.png
+C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\img\logo-a-prueba-fuego.png
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\js\site.js
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
