@@ -110,7 +110,7 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
                     </div>
                     <div style='text-align: center; padding:5px;'>                        
                         <h2>¡Bienvenidos a la primera fase del congreso: operación MOXA!</h2>
-                        <p font-size: 16px;>Has sido seleccionado para formar parte del equipo {0}.</p>
+                        <p style='font-size: 16px;'>Has sido seleccionado para formar parte del equipo {0}.</p>
                         <br />
                         <p style='font-size: 16px;'>Este congreso consta de 3 niveles, el cual, ya estamos listos para que inicies esta aventura que tenemos preparada para el congreso.<p>
                         <br />
