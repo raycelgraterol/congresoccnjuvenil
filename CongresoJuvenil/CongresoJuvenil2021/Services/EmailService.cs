@@ -15,7 +15,7 @@ namespace CongresoJuvenil2021.Services
             _configuration = configuration;
         }
 
-        public void Send(string to, string subject, string html, string from = "")
+        public void Send(string to, string subject, string html, string from = "congresojuvenilccn@gmail.com")
         {
             try
             {

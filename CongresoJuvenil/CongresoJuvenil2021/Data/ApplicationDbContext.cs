@@ -77,28 +77,46 @@ namespace CongresoJuvenil2021.Data
                   new Team
                   {
                       Id = 1,
-                      Name = "Equipo 1",
-                      Link = "https://t.me/joinchat/G__8m8vUw8g2ZmJh"
+                      Name = "M-1 MOXAGUILAS",
+                      Link = "https://t.me/joinchat/HZegqf-GylxlMWUx"
                   },
                   new Team
                   {
                       Id = 2,
-                      Name = "Equipo 2",
-                      Link = "https://t.me/joinchat/pUwYBUhKYdg2Njdh"
+                      Name = "M-2 Manada Divergente",
+                      Link = "https://t.me/joinchat/WHUPm1WLCWZjYjAx"
                   },
                   new Team
                   {
                       Id = 3,
-                      Name = "Equipo 3",
-                      Link = "https://t.me/joinchat/FDm8iaeo3JljNTQx"
+                      Name = "M-3 LEGENDARIOS",
+                      Link = "https://t.me/joinchat/BmGdsXc_nUU1OTNh"
                   },
                   new Team
                   {
                       Id = 4,
-                      Name = "Equipo 4",
-                      Link = "https://t.me/joinchat/YEcjgOYN1OE4Yzg5"
+                      Name = "M-4 JUVENTUD DIVERGENTE",
+                      Link = "https://t.me/joinchat/cdnPblmq7C0wMzVh"
                   }
               );
+
+            builder.Entity<PodCast>()
+             .HasData(
+                 new PodCast
+                 {
+                     Id = 1,
+                     Name = "Empresarios",
+                     Link = "https://google.com",
+                     TransmissionDate = Convert.ToDateTime("2021-07-25")
+                 },
+                 new PodCast
+                 {
+                     Id = 2,
+                     Name = "Matrimonios",
+                     Link = "https://google.com",
+                     TransmissionDate = Convert.ToDateTime("2021-07-26")
+                 }
+             );
 
             #region Congregations 
             builder.Entity<Congregation>()

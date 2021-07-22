@@ -4,14 +4,16 @@ using CongresoJuvenil2021.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CongresoJuvenil2021.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210722140839_Update teams link and name")]
+    partial class Updateteamslinkandname
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -827,22 +829,6 @@ namespace CongresoJuvenil2021.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("PodCasts");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Link = "https://google.com",
-                            Name = "Empresarios",
-                            TransmissionDate = new DateTime(2021, 7, 25, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Link = "https://google.com",
-                            Name = "Matrimonios",
-                            TransmissionDate = new DateTime(2021, 7, 26, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        });
                 });
 
             modelBuilder.Entity("CongresoJuvenil2021.Models.PodCastUser", b =>

@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\bin\Release\netcoreapp3.1\publish\</_PublishTargetUrl>
-    <History>True|2021-07-22T04:42:30.7412413Z;True|2021-07-22T00:31:46.7532606-04:00;True|2021-07-21T13:40:47.5662955-04:00;True|2021-07-21T13:36:16.5260425-04:00;True|2021-07-21T10:24:01.1085817-04:00;True|2021-07-19T19:33:34.4419364-04:00;True|2021-07-19T19:26:44.4064731-04:00;</History>
+    <History>True|2021-07-22T19:57:25.9764978Z;False|2021-07-22T15:56:56.8719474-04:00;True|2021-07-22T15:54:27.6166351-04:00;True|2021-07-22T00:42:30.7412413-04:00;True|2021-07-22T00:31:46.7532606-04:00;True|2021-07-21T13:40:47.5662955-04:00;True|2021-07-21T13:36:16.5260425-04:00;True|2021-07-21T10:24:01.1085817-04:00;True|2021-07-19T19:33:34.4419364-04:00;True|2021-07-19T19:26:44.4064731-04:00;</History>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
   </PropertyGroup>
   <ItemGroup>

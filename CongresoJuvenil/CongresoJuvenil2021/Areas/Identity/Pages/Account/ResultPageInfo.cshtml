@@ -12,6 +12,7 @@
     <div class="d-block d-sm-none w-100">
         <div class="moxa-banner-xs">
         </div>
+        <img src="~/img/banner-correo.png" alt="Alternate Text" />
     </div>
 
     <div class="col-md-5 offset-md-1 text-center">
@@ -24,19 +25,25 @@
 
         <div class="row">
             <div class="col-12">
-                <h1 class="moxa-h1 mt-5 mb-5 text-center">
-                    ¡ESTAS LISTO PARA PARTICIPAR!
+                <h1 class="moxa-h1 mt-5 mb-3 text-center">
+                    ¡Bienvenido al equipo @Model.MyTeam.Id!
                 </h1>
 
-                <h2 class="moxa-h2 text-center">Atento a tu correo electrónico</h2>
+                <p>
+                    En este enlace de Telegram podrás ingresar al grupo de tu equipo.
+                </p>
+
+                <a class="btn btn-info mt-1" href="@Model.MyTeam.Link" target="_blank">Grupo de Telegram!</a>
+
+                <h2 class="moxa-h2 text-center mt-5">Atento a tu <b>correo electrónico</b></h2>
             </div>
         </div>
 
         <div class="row">
             <div class="col-12">
-                <p class="moxa-p-light text-center">te llegará una información importante para iniciar este congreso</p>
+                <p class="moxa-p-light text-center">Allí también te llegará la información de tu equipo del congreso</p>
 
-                <a class="btn btn-block btn-light moxa-btn">VOLVER A LA PAGINA PRINCIPAL</a>
+                <a class="btn btn-block btn-light moxa-btn" href="/">VOLVER A LA PAGINA PRINCIPAL</a>
             </div>
         </div>
     </div>

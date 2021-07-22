@@ -1,5 +1,6 @@
 using CongresoJuvenil2021.Data;
 using CongresoJuvenil2021.Models;
+using CongresoJuvenil2021.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -39,6 +40,8 @@ namespace CongresoJuvenil2021
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultUI()
                 .AddDefaultTokenProviders();
+
+            services.AddTransient<IEmailService, EmailService>();
 
             services.AddControllersWithViews();
             services.AddRazorPages();

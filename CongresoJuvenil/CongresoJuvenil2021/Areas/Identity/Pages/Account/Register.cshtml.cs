@@ -74,19 +74,19 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
             public string ConfirmPassword { get; set; }
 
             [Required(ErrorMessage = "El Nombre es necesario.")]
-            [Display(Name = "NOMBRE")]
+            [Display(Name = "Nombre")]
             public string FirstName { get; set; }
 
             [Required(ErrorMessage = "El Apellido es necesario.")]
-            [Display(Name = "APELLIDO")]
+            [Display(Name = "Apellido")]
             public string LastName { get; set; }
 
             [Required(ErrorMessage = "El Telefono celular es necesario.")]
-            [Display(Name = "Telefono celular")]
+            [Display(Name = "Teléfono celular")]
             public string PhoneNumber { get; set; }
 
             [Required(ErrorMessage = "La Edad es necesaria.")]
-            [Display(Name = "EDAD")]
+            [Display(Name = "Edad")]
             [Range(1, 120)]
             public int Age { get; set; }
 
@@ -163,7 +163,7 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
                 {
                     _logger.LogInformation("El usuario creó una nueva cuenta con contraseña.");
 
-                    await _signInManager.SignInAsync(user, isPersistent: false);
+                    await _signInManager.SignInAsync(user, isPersistent: true);
 
                     //Add rol to user.
                     await _userManager.AddToRoleAsync(user, UserRoles.Competitor);
