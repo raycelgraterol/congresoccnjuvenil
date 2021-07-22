@@ -21,7 +21,9 @@ namespace CongresoJuvenil2021.Services
             {
                 //create message
                 var email = new MimeMessage();
-                email.From.Add(MailboxAddress.Parse(from));
+                var address = MailboxAddress.Parse(from);
+                address.Name = "Congreso Juvenil 2021";
+                email.From.Add(address);
                 email.To.Add(MailboxAddress.Parse(to));
                 email.Subject = subject;
                 email.Body = new TextPart(TextFormat.Html) { Text = html };

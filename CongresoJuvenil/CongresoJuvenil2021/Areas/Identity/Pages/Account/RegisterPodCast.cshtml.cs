@@ -114,12 +114,15 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
                         <p style='font-size: 16px;'>Este congreso consta de 3 fases, el cual, ya estamos listos para que inicies esta experiencia que tenemos preparada para el congreso.<p>
                         <br />
                         <p style='font-size: 16px;'>Aquí te dejamos el enlace de tu equipo</p>
-                        <a href='{1}' style='color: #fff;background-color: #17a2b8;border-color: #17a2b8;text-decoration: none;padding: 10px;border-radius: .25rem;'>
+                        <a href='{1}' style='color: #fff;background-color: #17a2b8;border-color: #17a2b8;text-decoration: none;padding: 10px;border-radius: .25rem;margin-bottom:10px;'>
                         Grupo de Telegram</a>
                         <br />
-                        <p style='font-size: 16px; margin-top:5px;'>Aquí te dejamos el enlace de tu equipo</p>
-                        <a href='https://www.instagram.com/ccnjuvenil/' style='color: #fff;background-color: #17a2b8;border-color: #17a2b8;text-decoration: none;padding: 10px;border-radius: .25rem;'>
+                        <br />
+                        <p style='font-size: 16px; margin-top: 30px;'>Aquí te dejamos el enlace de tu equipo</p>
+                        <a href='https://www.instagram.com/ccnjuvenil/' style='color: #fff;background-color: #17a2b8;border-color: #17a2b8;text-decoration: none;padding: 10px;border-radius: .25rem;margin-bottom:10px;'>
                         @ccnjuvenil</a>
+                        <br />
+                        <br />
                     </div>
                     ", MyTeam.Id, MyTeam.Link);
 
