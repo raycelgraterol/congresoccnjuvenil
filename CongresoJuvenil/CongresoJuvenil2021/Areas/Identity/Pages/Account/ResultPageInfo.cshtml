@@ -5,23 +5,45 @@
     Layout = "~/Views/Shared/_blackLayout.cshtml";
 }
 <div class="row">
-    <div class="col-md-5">
-        <img class="moxa-img" src="~/img/banner-pc.png" alt="Alternate Text" />
+    <div class="d-none d-sm-block col-md-5">
+        <div class="moxa-banner">
+        </div>
     </div>
-    <div class="col-md-5 offset-md-1 text-center mt-5">
-        <h1 class="moxa-h1 mt-5 text-center">@ViewData["Title"]</h1>
-        <p class="moxa-p text-center">CONGRESO DE JOVENES 2021</p>
+    <div class="d-block d-sm-none w-100">
+        <div class="moxa-banner-xs">
+        </div>
+    </div>
 
-        <h1 class="moxa-h1 mt-5 mb-5 text-center">
-            ¡ESTAS LISTO PARA PARTICIPAR!
-        </h1>
+    <div class="col-md-5 offset-md-1 text-center">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="moxa-h1 mt-md-5 mt-3 text-center">@ViewData["Title"]</h1>
+                <p class="moxa-p text-center">CONGRESO DE JÓVENES 2021</p>
+            </div>
+        </div>
 
-        <h2 class="moxa-h2 text-center">Atento a tu correo electrónico</h2>
+        <div class="row">
+            <div class="col-12">
+                <h1 class="moxa-h1 mt-5 mb-5 text-center">
+                    ¡ESTAS LISTO PARA PARTICIPAR!
+                </h1>
 
-        <p class="moxa-p-light text-center">te llegará una información importante para iniciar este congreso</p>
+                <h2 class="moxa-h2 text-center">Atento a tu correo electrónico</h2>
+            </div>
+        </div>
 
-        <a href="/" class="btn btn-block">
-            VOLVER A LA PAGINA PRINCIPAL
-        </a>
+        <div class="row">
+            <div class="col-12">
+                <p class="moxa-p-light text-center">te llegará una información importante para iniciar este congreso</p>
+
+                <a class="btn btn-block btn-light moxa-btn">VOLVER A LA PAGINA PRINCIPAL</a>
+            </div>
+        </div>
     </div>
 </div>
+@section Scripts {
+    <script>
+        $(".moxa-banner").css("height", $('html').height());
+    </script>
+}
+

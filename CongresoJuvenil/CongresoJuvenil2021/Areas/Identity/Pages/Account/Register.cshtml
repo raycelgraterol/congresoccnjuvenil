@@ -6,59 +6,65 @@
 }
 
 <div class="row">
-    <div class="col-md-5">
-        <img class="moxa-img" src="~/img/banner-pc.png" alt="Alternate Text" />
+    <div class="d-none d-sm-block col-md-5">
+        <div class="moxa-banner">
+        </div>
     </div>
-    <div class="col-md-5 offset-md-1">
-        
-        <h1 class="moxa-h1 mt-2 text-center">@ViewData["Title"]</h1>
+    <div class="d-block d-sm-none w-100">
+        <div class="moxa-banner-xs">
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-5 offset-md-1">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="moxa-h1 mt-md-5 mt-3 text-center">@ViewData["Title"]</h1>
+                <p class="moxa-p text-center">
+                    Ingresa toda la información para participar en las 3 fases del Congreso Juvenil 2021.
+                </p>
+            </div>
+        </div>
 
         <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
-            <p class="moxa-p text-center">
-                POR FAVOR INGRESA TODA LA INFORMACIÓN, PARA PARTICIPAR EN LAS
-                TRES ETAPAS DEL CONGRESO DE JOVENES 2021.
-            </p>
             <div class="row">
                 <input asp-for="Input.TeamId" type="hidden" value="@Model.RandomId" />
-                <div class="col-6 col-md-4">
+                <div class="col-12 col-md-4">
                     <div class="form-group">
-                        <label class="moxa-lbl" asp-for="Input.FirstName"></label>
+                        <label class="moxa-lbl" asp-for="Input.FirstName"></label><span style="color:red">*</span>
                         <input asp-for="Input.FirstName" class="form-control" placeholder="Primer Nombre" />
                         <span asp-validation-for="Input.FirstName" class="text-danger"></span>
                     </div>
                 </div>
                 <div class="col-12 col-md-4">
                     <div class="form-group">
-                        <label class="moxa-lbl" asp-for="Input.LastName"></label>
+                        <label class="moxa-lbl" asp-for="Input.LastName"></label><span style="color:red">*</span>
                         <input asp-for="Input.LastName" class="form-control" placeholder="Apellido" />
                         <span asp-validation-for="Input.LastName" class="text-danger"></span>
                     </div>
                 </div>
                 <div class="col-12 col-md-4">
                     <div class="form-group">
-                        <label class="moxa-lbl" asp-for="Input.Age"></label>
+                        <label class="moxa-lbl" asp-for="Input.Age"></label><span style="color:red">*</span>
                         <input asp-for="Input.Age" class="form-control" placeholder="16" />
                         <span asp-validation-for="Input.Age" class="text-danger"></span>
                     </div>
                 </div>
-                <div class="col-6 col-md-6">
+                <div class="col-12 col-md-6">
                     <div class="form-group">
-                        <label class="moxa-lbl" asp-for="Input.Email"></label>
+                        <label class="moxa-lbl" asp-for="Input.Email"></label><span style="color:red">*</span>
                         <input asp-for="Input.Email" class="form-control" placeholder="info@ccnjuvenil.com" />
                         <span asp-validation-for="Input.Email" class="text-danger"></span>
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="form-group">
-                        <label class="moxa-lbl" asp-for="Input.PhoneNumber"></label>
+                        <label class="moxa-lbl" asp-for="Input.PhoneNumber"></label><span style="color:red">*</span>
                         <input asp-for="Input.PhoneNumber" class="form-control" placeholder="+58 414 000 0000" />
                         <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
                     </div>
                 </div>
                 <div class="col-12 col-md-12">
                     <div class="form-group">
-                        <label class="moxa-lbl-lg">En caso de pertenecer a CCN, escriba la congregación al que pertenece.</label>
-                        <br />
+                        <label class="moxa-lbl-lg">En caso de pertenecer a CCN, seleccione su congregación.</label>
                         <label class="moxa-lbl" asp-for="Input.CongregationId"></label>
                         <select asp-for="Input.CongregationId" asp-items="Model.Congregations" class="form-control"></select>
                     </div>
@@ -103,7 +109,7 @@
                         <input asp-for="Input.Twitter" class="form-control" />
                     </div>
                 </div>
-                <div class="col-12 col-md-6">
+                <div class="col-12">
                     <div class="form-group">
                         <input type="hidden" asp-for="Input.Password" class="form-control" value="Juv&Fam0426*#." />
                         <input type="hidden" asp-for="Input.ConfirmPassword" class="form-control" value="Juv&Fam0426*#." />
@@ -111,8 +117,8 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 text-right">
-                    <button type="submit" class="btn btn-light">SIGUIENTE </button>
+                <div class="col-12 text-right mb-5">
+                    <button type="submit" class="btn btn-light moxa-btn">SIGUIENTE <img class="moxa-arrow" src="/img/arrow-right.svg" /></button>
                 </div>
             </div>
         </form>
@@ -121,4 +127,7 @@
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+    <script>
+        $(".moxa-banner").css("height", $('html').height());
+    </script>
 }

@@ -6,21 +6,35 @@
 }
 
 <div class="row">
-    <div class="col-md-5">
-        <img class="moxa-img" src="~/img/banner-pc.png" alt="Alternate Text" />
+    <div class="d-none d-sm-block col-md-5">
+        <div class="moxa-banner">
+        </div>
     </div>
-    <div class="col-md-5 offset-md-1">
-        <h1 class="moxa-h1 mt-5 text-center">@ViewData["Title"]</h1>
-        <p class="moxa-p text-center">CONGRESO DE JOVENES 2021</p>
+    <div class="d-block d-sm-none w-100">
+        <div class="moxa-banner-xs">
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-md-5 offset-md-1">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="moxa-h1 mt-md-5 mt-3 text-center">@ViewData["Title"]</h1>
+                <p class="moxa-p text-center">CONGRESO DE JÓVENES 2021</p>
+            </div>
+        </div>        
 
         <form asp-route-returnUrl="@Model.returnUrl" method="post">
-            <h2 class="moxa-h2">PODCAST MOXA</h2>
-            <p class="moxa-p">
-                Escoge a cuáles podcast asistirás en este congreso.
-            </p>
-            <p class="moxa-p-light">
-                Selecciona:
-            </p>
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="moxa-h2">PODCAST MOXA</h2>
+                    <p class="moxa-p">
+                        Escoge a cuáles podcast asistirás en este congreso.
+                    </p>
+                    <p class="moxa-p-light">
+                        Selecciona:
+                    </p>
+                </div>
+            </div>            
 
             <input type="hidden" name="CurrentUserId" value="@Model.CurrentUserId" />
 
@@ -35,9 +49,14 @@
             </div>
             <div class="row">
                 <div class="col-12 text-right">
-                    <button type="submit" class="btn btn-light">SIGUIENTE </button>
+                    <button type="submit" class="btn btn-light moxa-btn">SIGUIENTE <img class="moxa-arrow" src="/img/arrow-right.svg" /></button>
                 </div>
             </div>
         </form>
     </div>
 </div>
+@section Scripts {
+    <script>        
+        $(".moxa-banner").css("height", $('html').height());
+    </script>
+}
