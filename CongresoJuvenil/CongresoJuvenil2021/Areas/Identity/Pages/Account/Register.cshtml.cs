@@ -52,6 +52,9 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
 
         public string ReturnUrl { get; set; }
 
+        [BindProperty]
+        public string ErrorMessage { get; set; } = "";
+
         public int RandomId { get; set; }
 
         public IEnumerable<SelectListItem> Congregations { get; set; }
@@ -119,19 +122,9 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
             ReturnUrl = returnUrl;
             Random rnd = new Random();
             RandomId = rnd.Next(1, 4);
+            
 
-            var items = await _context.Congregations
-                                    .Select(x => 
-                                        new SelectListItem
-                                        {
-                                            Value = x.Id.ToString(),
-                                            Text = x.Name == "Ninguna" ? "Otra congregación" : "CCN " + x.Name.Trim()
-                                        }
-                                    ).ToListAsync();
-
-            items.Insert(0, new SelectListItem() { Value = "0", Text = "Seleccione su congregación", Selected = true });
-
-            Congregations = items;
+            Congregations = await listItemsCongregation();
         }
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = "~/Identity/Account/RegisterPodCast")
@@ -174,11 +167,34 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
                 foreach (var error in result.Errors)
                 {
                     ModelState.AddModelError(string.Empty, error.Description);
+                    if (error.Description.Contains("already taken"))
+                    {
+                        ErrorMessage = string.Format("'{0}' ya existe como usuario intente otro diferente.", Input.Email);
+                    }
                 }
             }
 
+            Congregations = await listItemsCongregation();
             // If we got this far, something failed, redisplay form
             return Page();
+        }
+
+        private async Task<List<SelectListItem>> listItemsCongregation()
+        {
+            var items = await _context.Congregations
+                                    .OrderBy(x => x.Name)
+                                    .Select(x =>
+                                        new SelectListItem
+                                        {
+                                            Value = x.Id.ToString(),
+                                            Text = x.Name == "Ninguna" ? "Otra congregación" : "CCN " + x.Name.Trim()
+                                        }
+                                    )
+                                    .ToListAsync();
+
+            items.Insert(0, new SelectListItem() { Value = "0", Text = "Seleccione su congregación", Selected = true });
+
+            return items;
         }
     }
 }

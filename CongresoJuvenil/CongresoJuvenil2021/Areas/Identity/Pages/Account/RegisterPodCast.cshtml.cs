@@ -106,22 +106,24 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
                     @"
                     <div style='text-align: center; padding:5px; margin-bottom:10px'>
                         <img width='900px' height='auto' src='https://congresoccnjuvenil.com/img/banner-correo.png' alt='Alternate Text' />
-                        <h1>Nivel 1 - Operación MOXA</h1>
                     </div>
                     <div style='text-align: center; padding:5px;'>                        
                         <h2>¡Bienvenidos a la primera fase del congreso: operación MOXA!</h2>
                         <p style='font-size: 16px;'>Has sido seleccionado para formar parte del equipo {0}.</p>
                         <br />
-                        <p style='font-size: 16px;'>Este congreso consta de 3 niveles, el cual, ya estamos listos para que inicies esta aventura que tenemos preparada para el congreso.<p>
+                        <p style='font-size: 16px;'>Este congreso consta de 3 fases, el cual, ya estamos listos para que inicies esta experiencia que tenemos preparada para el congreso.<p>
                         <br />
                         <p style='font-size: 16px;'>Aquí te dejamos el enlace de tu equipo</p>
                         <a href='{1}' style='color: #fff;background-color: #17a2b8;border-color: #17a2b8;text-decoration: none;padding: 10px;border-radius: .25rem;'>
                         Grupo de Telegram</a>
                         <br />
+                        <p style='font-size: 16px; margin-top:5px;'>Aquí te dejamos el enlace de tu equipo</p>
+                        <a href='https://www.instagram.com/ccnjuvenil/' style='color: #fff;background-color: #17a2b8;border-color: #17a2b8;text-decoration: none;padding: 10px;border-radius: .25rem;'>
+                        @ccnjuvenil</a>
                     </div>
                     ", MyTeam.Id, MyTeam.Link);
 
-                _emailService.Send(CurrentUser.Email, "Bienvenido al congreso juvenil operación MOXA", stringHTML);
+                _emailService.Send(CurrentUser.Email, "Bienvenidos al Congreso Juvenil 2021 - MOXA a prueba de fuego", stringHTML);
 
                 return LocalRedirect(returnUrl);
             }            
