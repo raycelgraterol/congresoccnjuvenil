@@ -133,8 +133,17 @@ html {
   }
 }
 
+@media (max-width: 576px) {
+    .moxa-chk {
+        position: relative;
+        top: 30%;
+        left:50%;
+    }
+}
+
+
 .border-top {
-  border-top: 1px solid #e5e5e5;
+    border-top: 1px solid #e5e5e5;
 }
 .border-bottom {
   border-bottom: 1px solid #e5e5e5;

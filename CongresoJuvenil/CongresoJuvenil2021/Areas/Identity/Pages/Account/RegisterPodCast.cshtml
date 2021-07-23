@@ -55,8 +55,14 @@
                             <p class="moxa-p-light mt-2">Jueves 26 de Agosto:</p>
                         </text>
                     }
-                    <input type="checkbox" name="PodCastsChecked" value="@Model.PodCasts[i].Id" />
-                    <label class="ml-1 mb-2 mt-2 moxa-lbl-sm">@Model.PodCasts[i].Name</label>
+                <div class="row">
+                    <div class="col-2">
+                        <input type="checkbox" class="moxa-chk" name="PodCastsChecked" value="@Model.PodCasts[i].Id" />
+                    </div>
+                    <div class="col-10">
+                        <label class="ml-1 mb-2 mt-2 moxa-lbl-sm w-75">@Model.PodCasts[i].Name</label>
+                    </div>
+                </div>
                 </div>
                 }
             </div>
