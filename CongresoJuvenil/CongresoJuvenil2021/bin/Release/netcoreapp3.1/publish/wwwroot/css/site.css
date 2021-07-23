@@ -54,6 +54,11 @@ body {
     font-size: 14px;
 }
 
+.moxa-lbl-sm {
+    font-weight: normal;
+    font-size: 13px;
+}
+
 .moxa-lbl-lg {
     font-weight: bold;
     font-size: 16px;
