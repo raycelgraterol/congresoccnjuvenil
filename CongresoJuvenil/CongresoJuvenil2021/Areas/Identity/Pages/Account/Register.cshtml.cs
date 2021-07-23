@@ -121,7 +121,7 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
         {
             ReturnUrl = returnUrl;
             Random rnd = new Random();
-            RandomId = rnd.Next(1, 4);
+            RandomId = rnd.Next(1, 5);
             
 
             Congregations = await listItemsCongregation();

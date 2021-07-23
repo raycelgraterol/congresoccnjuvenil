@@ -31,7 +31,7 @@ namespace CongresoJuvenil2021
         {
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
+                    Configuration.GetConnectionString("ProdConnection")));
 
             services.AddIdentity<AppUser, IdentityRole>(options => {
                     options.User.RequireUniqueEmail = false;

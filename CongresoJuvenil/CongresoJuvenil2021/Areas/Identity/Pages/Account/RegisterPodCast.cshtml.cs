@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using CongresoJuvenil2021.Data;
@@ -72,7 +73,7 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
                                     new PodCast()
                                     {
                                         Id = x.Id,
-                                        Name = x.Name,
+                                        Name = x.Name + " | " + x.TransmissionDate.ToString("hh:mm tt", CultureInfo.InvariantCulture) + " hora Venezuela.",
                                         Selected = false
                                     }
                                 ).ToArrayAsync();
@@ -118,7 +119,7 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
                         Grupo de Telegram</a>
                         <br />
                         <br />
-                        <p style='font-size: 16px; margin-top: 30px;'>Aquí te dejamos el enlace de tu equipo</p>
+                        <p style='font-size: 16px; margin-top: 30px;'>Para más información comunícate a través de nuestra cuenta de Instagram</p>
                         <a href='https://www.instagram.com/ccnjuvenil/' style='color: #fff;background-color: #17a2b8;border-color: #17a2b8;text-decoration: none;padding: 10px;border-radius: .25rem;margin-bottom:10px;'>
                         @ccnjuvenil</a>
                         <br />

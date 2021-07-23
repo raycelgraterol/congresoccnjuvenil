@@ -105,16 +105,51 @@ namespace CongresoJuvenil2021.Data
                  new PodCast
                  {
                      Id = 1,
-                     Name = "Empresarios",
-                     Link = "https://google.com",
-                     TransmissionDate = Convert.ToDateTime("2021-07-25")
+                     Name = "Alabanza y adoración",
+                     Link = "#",
+                     TransmissionDate = DateTime.ParseExact("2021-08-25 14:50", "yyyy-MM-dd HH:mm", null)
                  },
                  new PodCast
                  {
                      Id = 2,
-                     Name = "Matrimonios",
-                     Link = "https://google.com",
-                     TransmissionDate = Convert.ToDateTime("2021-07-26")
+                     Name = "Vocación, visión, llamado y productividad",
+                     Link = "#",
+                     TransmissionDate = DateTime.ParseExact("2021-08-25 15:50", "yyyy-MM-dd HH:mm", null)
+                 },
+                 new PodCast
+                 {
+                     Id = 3,
+                     Name = "Pandemia de Amor",
+                     Link = "#",
+                     TransmissionDate = DateTime.ParseExact("2021-08-25 16:50", "yyyy-MM-dd HH:mm", null)
+                 },
+                 new PodCast
+                 {
+                     Id = 4,
+                     Name = "Desenmascarando la ideología de género",
+                     Link = "#",
+                     TransmissionDate = DateTime.ParseExact("2021-08-25 17:45", "yyyy-MM-dd HH:mm", null)
+                 },
+                 new PodCast
+                 {
+                     Id = 5,
+                     Name = "Visión, emprendimiento y libertad financiera",
+                     Link = "#",
+                     TransmissionDate = DateTime.ParseExact("2021-08-26 14:50", "yyyy-MM-dd HH:mm", null)
+                 },
+                 new PodCast
+                 {
+                     Id = 6,
+                     Name = "¿Y cómo funciona esto? Especial para novios",
+                     Link = "#",
+                     TransmissionDate = DateTime.ParseExact("2021-08-26 15:55", "yyyy-MM-dd HH:mm", null)
+                 },
+                 new PodCast
+                 {
+                     Id = 7,
+                     Name = "Porque estar solo, nunca será mejor. Especial para solteros",
+                     Link = "#",
+                     TransmissionDate = DateTime.ParseExact("2021-08-26 16:55", "yyyy-MM-dd HH:mm", null)
                  }
              );
 

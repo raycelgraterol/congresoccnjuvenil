@@ -41,10 +41,23 @@
             <div class="row">
                 @for (var i = 0; i < Model.PodCasts.Count(); i++)
                 {
-                    <div class="col-12">
-                        <input type="checkbox" name="PodCastsChecked" value="@Model.PodCasts[i].Id" />
-                        <label class="ml-1 moxa-lbl-md">@Model.PodCasts[i].Name</label>
-                    </div>
+                    
+                <div class="col-12">
+                    @if (i == 0)
+                    {
+                        <text>
+                            <p class="moxa-p-light mt-1">Miércoles 25 de Agosto:</p>
+                        </text>
+                    }
+                    else if (i == 4)
+                    {
+                        <text>
+                            <p class="moxa-p-light mt-2">Jueves 26 de Agosto:</p>
+                        </text>
+                    }
+                    <input type="checkbox" name="PodCastsChecked" value="@Model.PodCasts[i].Id" />
+                    <label class="ml-1 mb-2 mt-2 moxa-lbl-sm">@Model.PodCasts[i].Name</label>
+                </div>
                 }
             </div>
             <div class="row">
