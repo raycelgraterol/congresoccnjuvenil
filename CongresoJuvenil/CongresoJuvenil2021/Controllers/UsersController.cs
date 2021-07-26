@@ -30,14 +30,14 @@ namespace CongresoJuvenil2021.Controllers
         }
 
         // GET: Users/Details/5
-        public async Task<IActionResult> Details(string id)
+        public async Task<IActionResult> Details(long id)
         {
-            if (id == null)
+            if (id == 0)
             {
                 return NotFound();
             }
 
-            var tempUser = await userManager.FindByIdAsync(id);
+            var tempUser = await userManager.FindByIdAsync(id.ToString());
             if (tempUser == null)
             {
                 return NotFound();
@@ -69,14 +69,14 @@ namespace CongresoJuvenil2021.Controllers
         }
 
         // GET: Users/Edit/5
-        public async Task<IActionResult> Edit(string id)
+        public async Task<IActionResult> Edit(long id)
         {
-            if (id == null)
+            if (id == 0)
             {
                 return NotFound();
             }
 
-            var tempUser = await userManager.FindByIdAsync(id);
+            var tempUser = await userManager.FindByIdAsync(id.ToString());
             if (tempUser == null)
             {
                 return NotFound();
@@ -89,7 +89,7 @@ namespace CongresoJuvenil2021.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("Id,FirstName,LastName,PhoneNumber,Age,Instagram,Facebook,TikTok,Twitter")] AppUser tempUser)
+        public async Task<IActionResult> Edit(long id, [Bind("Id,FirstName,LastName,PhoneNumber,Age,Instagram,Facebook,TikTok,Twitter")] AppUser tempUser)
         {
             if (id != tempUser.Id)
             {
@@ -100,7 +100,7 @@ namespace CongresoJuvenil2021.Controllers
             {
                 try
                 {
-                    var currentUser = await userManager.FindByIdAsync(id);
+                    var currentUser = await userManager.FindByIdAsync(id.ToString());
 
                     currentUser.FirstName = tempUser.FirstName;
                     currentUser.LastName = tempUser.LastName;
@@ -116,7 +116,7 @@ namespace CongresoJuvenil2021.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!(await TempUserExists(tempUser.Id)))
+                    if (!(await TempUserExists(id)))
                     {
                         return NotFound();
                     }
@@ -131,14 +131,14 @@ namespace CongresoJuvenil2021.Controllers
         }
 
         // GET: Users/Delete/5
-        public async Task<IActionResult> Delete(string id)
+        public async Task<IActionResult> Delete(long id)
         {
-            if (id == null)
+            if (id == 0)
             {
                 return NotFound();
             }
 
-            var tempUser = await userManager.FindByIdAsync(id);
+            var tempUser = await userManager.FindByIdAsync(id.ToString());
 
             if (tempUser == null)
             {
@@ -151,17 +151,17 @@ namespace CongresoJuvenil2021.Controllers
         // POST: Users/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(string id)
+        public async Task<IActionResult> DeleteConfirmed(long id)
         {
-            var tempUser = await userManager.FindByIdAsync(id);
+            var tempUser = await userManager.FindByIdAsync(id.ToString());
             await userManager.DeleteAsync(tempUser);
             
             return RedirectToAction(nameof(Index));
         }
 
-        private async Task<bool> TempUserExists(string id)
+        private async Task<bool> TempUserExists(long id)
         {
-            var user = await userManager.FindByIdAsync(id);
+            var user = await userManager.FindByIdAsync(id.ToString());
 
             return (user != null);
         }

@@ -1,0 +1,33 @@
+﻿@model IEnumerable<CongresoJuvenil2021.ViewModels.UserCongregation>
+
+@{
+    ViewData["Title"] = "Total Usuarios por Congregacion";
+}
+
+<h2>Total Usuarios por Congregacion</h2>
+
+<table class="table mt-4">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CongregationName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalUser)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CongregationName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalUser)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

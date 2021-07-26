@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CongresoJuvenil2021.Models
 {
-    public class AppUser: IdentityUser
+    public class AppUser: IdentityUser<long>
     {
         [Display(Name = "Nombre")]
         public string FirstName { get; set; }

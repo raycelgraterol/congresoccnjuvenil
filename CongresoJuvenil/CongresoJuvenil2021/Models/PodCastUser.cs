@@ -7,7 +7,7 @@ namespace CongresoJuvenil2021.Models
 {
     public class PodCastUser
     {
-        public string AppUserId { get; set; }
+        public long AppUserId { get; set; }
         public AppUser AppUser { get; set; }
 
         public int PodCastId { get; set; }

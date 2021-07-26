@@ -33,7 +33,7 @@ namespace CongresoJuvenil2021
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddIdentity<AppUser, IdentityRole>(options => {
+            services.AddIdentity<AppUser, IdentityRole<long>>(options => {
                     options.User.RequireUniqueEmail = false;
                     options.SignIn.RequireConfirmedAccount = false;
                 })

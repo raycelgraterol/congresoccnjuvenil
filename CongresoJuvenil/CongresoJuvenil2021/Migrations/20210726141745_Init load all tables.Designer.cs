@@ -7,11 +7,11 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace CongresoJuvenil2021.Data.Migrations
+namespace CongresoJuvenil2021.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210722140839_Update teams link and name")]
-    partial class Updateteamslinkandname
+    [Migration("20210726141745_Init load all tables")]
+    partial class Initloadalltables
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,8 +23,10 @@ namespace CongresoJuvenil2021.Data.Migrations
 
             modelBuilder.Entity("CongresoJuvenil2021.Models.AppUser", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
@@ -121,7 +123,7 @@ namespace CongresoJuvenil2021.Data.Migrations
 
                     b.HasIndex("TeamId");
 
-                    b.ToTable("AspNetUsers");
+                    b.ToTable("User");
                 });
 
             modelBuilder.Entity("CongresoJuvenil2021.Models.Congregation", b =>
@@ -829,6 +831,57 @@ namespace CongresoJuvenil2021.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("PodCasts");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Link = "#",
+                            Name = "Alabanza y adoración",
+                            TransmissionDate = new DateTime(2021, 8, 25, 14, 50, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Link = "#",
+                            Name = "Vocación, visión, llamado y productividad",
+                            TransmissionDate = new DateTime(2021, 8, 25, 15, 50, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Link = "#",
+                            Name = "Pandemia de Amor",
+                            TransmissionDate = new DateTime(2021, 8, 25, 16, 50, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Link = "#",
+                            Name = "Desenmascarando la ideología de género",
+                            TransmissionDate = new DateTime(2021, 8, 25, 17, 45, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Link = "#",
+                            Name = "Visión, emprendimiento y libertad financiera",
+                            TransmissionDate = new DateTime(2021, 8, 26, 14, 50, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Link = "#",
+                            Name = "¿Y cómo funciona esto? Especial para novios",
+                            TransmissionDate = new DateTime(2021, 8, 26, 15, 55, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Link = "#",
+                            Name = "Porque estar solo, nunca será mejor. Especial para solteros",
+                            TransmissionDate = new DateTime(2021, 8, 26, 16, 55, 0, 0, DateTimeKind.Unspecified)
+                        });
                 });
 
             modelBuilder.Entity("CongresoJuvenil2021.Models.PodCastUser", b =>
@@ -836,8 +889,8 @@ namespace CongresoJuvenil2021.Data.Migrations
                     b.Property<int>("PodCastId")
                         .HasColumnType("int");
 
-                    b.Property<string>("AppUserId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<long>("AppUserId")
+                        .HasColumnType("bigint");
 
                     b.HasKey("PodCastId", "AppUserId");
 
@@ -892,10 +945,12 @@ namespace CongresoJuvenil2021.Data.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole<long>", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
@@ -916,47 +971,47 @@ namespace CongresoJuvenil2021.Data.Migrations
                         .HasName("RoleNameIndex")
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
-                    b.ToTable("AspNetRoles");
+                    b.ToTable("Role");
 
                     b.HasData(
                         new
                         {
-                            Id = "97aa4ac5-db47-4db1-8c4e-35fc199a8cb8",
+                            Id = 1L,
                             ConcurrencyStamp = "1209d965-96f4-4402-8f9a-991e6964728a",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "929071bc-796f-4002-9b15-b44a0580f71c",
+                            Id = 2L,
                             ConcurrencyStamp = "1209d965-96f4-4402-8f9a-991e6964728a",
                             Name = "Lider Equipo",
                             NormalizedName = "LIDER EQUIPO"
                         },
                         new
                         {
-                            Id = "3e8aa687-7f75-4ce9-a962-a39b73c5ede3",
+                            Id = 3L,
                             ConcurrencyStamp = "1209d965-96f4-4402-8f9a-991e6964728a",
                             Name = "Coordinador MOXA",
                             NormalizedName = "COORDINADOR MOXA"
                         },
                         new
                         {
-                            Id = "39f67487-8a3e-448f-a054-88b84239eb66",
+                            Id = 4L,
                             ConcurrencyStamp = "1209d965-96f4-4402-8f9a-991e6964728a",
                             Name = "Coordinador Congreso",
                             NormalizedName = "Coordinador Congreso"
                         },
                         new
                         {
-                            Id = "a3a79ca9-2116-4da3-884b-9fc4c825f7f6",
+                            Id = 5L,
                             ConcurrencyStamp = "1209d965-96f4-4402-8f9a-991e6964728a",
                             Name = "Participante",
                             NormalizedName = "Participante"
                         });
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<long>", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -969,18 +1024,17 @@ namespace CongresoJuvenil2021.Data.Migrations
                     b.Property<string>("ClaimValue")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("RoleId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<long>("RoleId")
+                        .HasColumnType("bigint");
 
                     b.HasKey("Id");
 
                     b.HasIndex("RoleId");
 
-                    b.ToTable("AspNetRoleClaims");
+                    b.ToTable("RoleClaim");
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<long>", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -993,18 +1047,17 @@ namespace CongresoJuvenil2021.Data.Migrations
                     b.Property<string>("ClaimValue")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<long>("UserId")
+                        .HasColumnType("bigint");
 
                     b.HasKey("Id");
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("AspNetUserClaims");
+                    b.ToTable("UserClaim");
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<long>", b =>
                 {
                     b.Property<string>("LoginProvider")
                         .HasColumnType("nvarchar(450)");
@@ -1015,36 +1068,35 @@ namespace CongresoJuvenil2021.Data.Migrations
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<long>("UserId")
+                        .HasColumnType("bigint");
 
                     b.HasKey("LoginProvider", "ProviderKey");
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("AspNetUserLogins");
+                    b.ToTable("UserLogin");
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<long>", b =>
                 {
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<long>("UserId")
+                        .HasColumnType("bigint");
 
-                    b.Property<string>("RoleId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<long>("RoleId")
+                        .HasColumnType("bigint");
 
                     b.HasKey("UserId", "RoleId");
 
                     b.HasIndex("RoleId");
 
-                    b.ToTable("AspNetUserRoles");
+                    b.ToTable("UserRole");
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<long>", b =>
                 {
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<long>("UserId")
+                        .HasColumnType("bigint");
 
                     b.Property<string>("LoginProvider")
                         .HasColumnType("nvarchar(450)");
@@ -1057,7 +1109,7 @@ namespace CongresoJuvenil2021.Data.Migrations
 
                     b.HasKey("UserId", "LoginProvider", "Name");
 
-                    b.ToTable("AspNetUserTokens");
+                    b.ToTable("UserToken");
                 });
 
             modelBuilder.Entity("CongresoJuvenil2021.Models.AppUser", b =>
@@ -1088,16 +1140,16 @@ namespace CongresoJuvenil2021.Data.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<long>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole<long>", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<long>", b =>
                 {
                     b.HasOne("CongresoJuvenil2021.Models.AppUser", null)
                         .WithMany()
@@ -1106,7 +1158,7 @@ namespace CongresoJuvenil2021.Data.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<long>", b =>
                 {
                     b.HasOne("CongresoJuvenil2021.Models.AppUser", null)
                         .WithMany()
@@ -1115,9 +1167,9 @@ namespace CongresoJuvenil2021.Data.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<long>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole<long>", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1130,7 +1182,7 @@ namespace CongresoJuvenil2021.Data.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<long>", b =>
                 {
                     b.HasOne("CongresoJuvenil2021.Models.AppUser", null)
                         .WithMany()

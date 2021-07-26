@@ -8,7 +8,7 @@ using System.Text;
 
 namespace CongresoJuvenil2021.Data
 {
-    public class ApplicationDbContext : IdentityDbContext<AppUser>
+    public class ApplicationDbContext : IdentityDbContext<AppUser, IdentityRole<long>, long, IdentityUserClaim<long>, IdentityUserRole<long>, IdentityUserLogin<long>, IdentityRoleClaim<long>, IdentityUserToken<long>>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
@@ -20,7 +20,14 @@ namespace CongresoJuvenil2021.Data
         {
             base.OnModelCreating(builder);
 
-            builder.Entity<AppUser>().ToTable("AspNetUsers");
+            builder.Entity<AppUser>().ToTable("User");
+            builder.Entity<IdentityRole<long>>().ToTable("Role");
+            builder.Entity<IdentityUserClaim<long>>().ToTable("UserClaim");
+            builder.Entity<IdentityUserLogin<long>>().ToTable("UserLogin");
+            builder.Entity<IdentityUserRole<long>>().ToTable("UserRole");
+            builder.Entity<IdentityUserToken<long>>().ToTable("UserToken");
+            builder.Entity<IdentityRoleClaim<long>>().ToTable("RoleClaim");
+
 
             builder.Entity<PodCastUser>()
                 .HasKey(x => new { x.PodCastId, x.AppUserId });
@@ -33,39 +40,39 @@ namespace CongresoJuvenil2021.Data
                 .WithMany(e => e.PodCasts)
                 .HasForeignKey(x => x.AppUserId);
 
-            builder.Entity<IdentityRole>()
+            builder.Entity<IdentityRole<long>>()
               .HasData(
-                  new IdentityRole
+                  new IdentityRole<long>
                   {
-                      Id = "97aa4ac5-db47-4db1-8c4e-35fc199a8cb8",
+                      Id = 1,
                       Name = "Admin",
                       NormalizedName = "ADMIN",
                       ConcurrencyStamp = "1209d965-96f4-4402-8f9a-991e6964728a"
                   },
-                  new IdentityRole
+                  new IdentityRole<long>
                   {
-                      Id = "929071bc-796f-4002-9b15-b44a0580f71c",
+                      Id = 2,
                       Name = "Lider Equipo",
                       NormalizedName = "LIDER EQUIPO",
                       ConcurrencyStamp = "1209d965-96f4-4402-8f9a-991e6964728a"
                   },
-                  new IdentityRole
+                  new IdentityRole<long>
                   {
-                      Id = "3e8aa687-7f75-4ce9-a962-a39b73c5ede3",
+                      Id = 3,
                       Name = "Coordinador MOXA",
                       NormalizedName = "COORDINADOR MOXA",
                       ConcurrencyStamp = "1209d965-96f4-4402-8f9a-991e6964728a"
                   },
-                  new IdentityRole
+                  new IdentityRole<long>
                   {
-                      Id = "39f67487-8a3e-448f-a054-88b84239eb66",
+                      Id = 4,
                       Name = "Coordinador Congreso",
                       NormalizedName = "Coordinador Congreso",
                       ConcurrencyStamp = "1209d965-96f4-4402-8f9a-991e6964728a"
                   },
-                  new IdentityRole
+                  new IdentityRole<long>
                   {
-                      Id = "a3a79ca9-2116-4da3-884b-9fc4c825f7f6",
+                      Id = 5,
                       Name = "Participante",
                       NormalizedName = "Participante",
                       ConcurrencyStamp = "1209d965-96f4-4402-8f9a-991e6964728a"
