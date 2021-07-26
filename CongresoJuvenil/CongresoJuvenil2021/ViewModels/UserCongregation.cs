@@ -11,7 +11,7 @@ namespace CongresoJuvenil2021.ViewModels
         public int CongregationId { get; set; }
         [Display(Name = "Congregacion")]
         public string CongregationName { get; set; }
-        [Display(Name = "Total")]
+        [Display(Name = "Cantidad")]
         public int TotalUser { get; set; }
     }
 }

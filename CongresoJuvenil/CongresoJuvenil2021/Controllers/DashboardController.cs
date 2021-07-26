@@ -42,6 +42,8 @@ namespace CongresoJuvenil2021.Controllers
                             })
                           .ToList();
 
+            ViewBag.CountTotal = userManager.Users.Count();
+
 
             return View(result);
         }
