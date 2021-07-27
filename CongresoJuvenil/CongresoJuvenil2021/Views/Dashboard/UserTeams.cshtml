@@ -1,19 +1,18 @@
-﻿@model IEnumerable<CongresoJuvenil2021.ViewModels.UserCongregation>
+﻿@model IEnumerable<CongresoJuvenil2021.ViewModels.TeamCongregation>
 
 @{
-    ViewData["Title"] = "Total Usuarios por Congregacion";
+    ViewData["Title"] = "Total Usuarios por Equipo";
 }
 <div class="row">
-    <div>
-        <h2>Total Usuarios por Congregacion</h2>
+    <div class="col-12">
+        <h2>Total Usuarios por Equipos</h2>
     </div>
     <div class="col-12">
-
         <table class="table mt-4">
             <thead>
                 <tr>
                     <th>
-                        @Html.DisplayNameFor(model => model.CongregationName)
+                        @Html.DisplayNameFor(model => model.TeamName)
                     </th>
                     <th>
                         @Html.DisplayNameFor(model => model.TotalUser)
@@ -25,7 +24,7 @@
                 {
                     <tr>
                         <td>
-                            @Html.DisplayFor(modelItem => item.CongregationName)
+                            @Html.DisplayFor(modelItem => item.TeamName)
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.TotalUser)

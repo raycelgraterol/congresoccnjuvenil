@@ -466,3 +466,4 @@ C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\bin\Relea
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\bin\Release\netcoreapp3.1\MimeKit.dll
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\bin\Release\netcoreapp3.1\BouncyCastle.Crypto.dll
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\Razor\Views\Dashboard\Index.cshtml.g.cs
+C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\Razor\Views\Dashboard\UserTeams.cshtml.g.cs

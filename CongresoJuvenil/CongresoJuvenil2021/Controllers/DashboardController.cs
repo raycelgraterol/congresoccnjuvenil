@@ -47,5 +47,29 @@ namespace CongresoJuvenil2021.Controllers
 
             return View(result);
         }
+
+        // GET: Totals
+        public IActionResult UserTeams()
+        {
+            var result = (from T1 in _context.Teams
+                          join T2 in userManager.Users on T1.Id equals T2.TeamId
+                          select new { Teams = T1, Users = T2 })
+                          .ToList()
+                          .GroupBy(
+                            p => p.Teams,
+                            p => p.Users,
+                            (key, g) => new TeamCongregation
+                            {
+                                TeamId = key.Id,
+                                TeamName = key.Name,
+                                TotalUser = g.Count()
+                            })
+                          .ToList();
+
+            ViewBag.CountTotal = userManager.Users.Count();
+
+
+            return View(result);
+        }
     }
 }
