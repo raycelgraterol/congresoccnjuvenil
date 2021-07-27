@@ -243,7 +243,8 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
                                         new SelectListItem
                                         {
                                             Value = x.Id.ToString(),
-                                            Text = x.Name == "Ninguna" ? "No formo parte de ninguna congregación" : "CCN " + x.Name.Trim()
+                                            Text = x.Name == "Ninguna" ? "No formo parte de ninguna congregación" 
+                                                        : (x.Name == "Otra congregación" ? x.Name : "CCN " + x.Name.Trim())
                                         }
                                     )
                                     .ToListAsync();
