@@ -61,7 +61,7 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
 
         public class InputModel
         {
-            [Required(ErrorMessage ="El E-mail es necesario.")]
+            [Required(ErrorMessage = "El E-mail es necesario.")]
             [EmailAddress]
             [Display(Name = "E-mail")]
             public string Email { get; set; }
@@ -122,7 +122,7 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
             ReturnUrl = returnUrl;
             Random rnd = new Random();
             RandomId = rnd.Next(1, 5);
-            
+
 
             Congregations = await listItemsCongregation();
         }
@@ -133,43 +133,82 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
 
             Input.CongregationId = Input.CongregationId == 0 ? 107 : Input.CongregationId;
 
-            if (ModelState.IsValid)
+            var currentUser = await _userManager.FindByEmailAsync(Input.Email);
+
+            if (currentUser == null)
             {
-                var user = new AppUser { 
-                    UserName = Input.Email,
-                    FirstName = Input.FirstName,
-                    LastName = Input.LastName,
-                    Email = Input.Email,
-                    TeamId = Input.TeamId,
-                    CongregationId = Input.CongregationId,
-                    PhoneNumber = Input.PhoneNumber,
-                    Age = Input.Age,
-                    Instagram = Input.Instagram,
-                    TikTok = Input.TikTok,
-                    Twitter = Input.Twitter,
-                    Facebook = Input.Facebook,
-                    NeedContact = Input.NeedContact
-                };
-
-                var result = await _userManager.CreateAsync(user, Input.Password);
-                if (result.Succeeded)
+                if (ModelState.IsValid)
                 {
-                    _logger.LogInformation("El usuario creó una nueva cuenta con contraseña.");
-
-                    await _signInManager.SignInAsync(user, isPersistent: true);
-
-                    //Add rol to user.
-                    await _userManager.AddToRoleAsync(user, UserRoles.Competitor);
-
-                    return LocalRedirect(returnUrl);
-                    
-                }
-                foreach (var error in result.Errors)
-                {
-                    ModelState.AddModelError(string.Empty, error.Description);
-                    if (error.Description.Contains("already taken"))
+                    var user = new AppUser
                     {
-                        ErrorMessage = string.Format("'{0}' ya existe como usuario intente otro diferente.", Input.Email);
+                        UserName = Input.Email,
+                        FirstName = Input.FirstName,
+                        LastName = Input.LastName,
+                        Email = Input.Email,
+                        TeamId = Input.TeamId,
+                        CongregationId = Input.CongregationId,
+                        PhoneNumber = Input.PhoneNumber,
+                        Age = Input.Age,
+                        Instagram = Input.Instagram,
+                        TikTok = Input.TikTok,
+                        Twitter = Input.Twitter,
+                        Facebook = Input.Facebook,
+                        NeedContact = Input.NeedContact
+                    };
+
+                    var result = await _userManager.CreateAsync(user, Input.Password);
+                    if (result.Succeeded)
+                    {
+                        _logger.LogInformation("El usuario creó una nueva cuenta con contraseña.");
+
+                        await _signInManager.SignInAsync(user, isPersistent: true);
+
+                        //Add rol to user.
+                        await _userManager.AddToRoleAsync(user, UserRoles.Competitor);
+
+                        return LocalRedirect(returnUrl);
+
+                    }
+                    foreach (var error in result.Errors)
+                    {
+                        ModelState.AddModelError(string.Empty, error.Description);
+                        if (error.Description.Contains("already taken"))
+                        {
+                            ErrorMessage = string.Format("'{0}' ya existe como usuario intente otro diferente.", Input.Email);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                if (ModelState.IsValid)
+                {
+                    currentUser.FirstName = Input.FirstName;
+                    currentUser.LastName = Input.LastName;
+                    currentUser.Age = Input.Age;
+                    currentUser.PhoneNumber = Input.PhoneNumber;
+                    currentUser.CongregationId = Input.CongregationId;
+                    currentUser.Instagram = Input.Instagram;
+                    currentUser.TikTok = Input.TikTok;
+                    currentUser.Twitter = Input.Twitter;
+                    currentUser.Facebook = Input.Facebook;
+                    currentUser.NeedContact = Input.NeedContact;
+
+                    var result = await _userManager.UpdateAsync(currentUser);
+                    if (result.Succeeded)
+                    {
+                        _logger.LogInformation("El usuario creó una nueva cuenta con contraseña.");
+
+                        await _signInManager.SignInAsync(currentUser, isPersistent: true);
+
+                        if (!(await _userManager.IsInRoleAsync(currentUser, UserRoles.Competitor)))
+                        {
+                            //Add rol to user.
+                            await _userManager.AddToRoleAsync(currentUser, UserRoles.Competitor);
+                        }
+
+                        return LocalRedirect(returnUrl);
+
                     }
                 }
             }
@@ -187,7 +226,7 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
                                         new SelectListItem
                                         {
                                             Value = x.Id.ToString(),
-                                            Text = x.Name == "Ninguna" ? "Otra congregación" : "CCN " + x.Name.Trim()
+                                            Text = x.Name == "Ninguna" ? "No pertenezco a CCN" : "CCN " + x.Name.Trim()
                                         }
                                     )
                                     .ToListAsync();

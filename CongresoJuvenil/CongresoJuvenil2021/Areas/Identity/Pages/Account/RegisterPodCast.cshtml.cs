@@ -58,9 +58,9 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
         {
             returnUrl = Url.Content("~/Identity/Account/Register");
 
-            if (User != null && !string.IsNullOrEmpty(User.Identity.Name))
+            if (User != null)
             {
-                CurrentUser = (await _userManager.FindByEmailAsync(User.Identity.Name));
+                CurrentUser = await _userManager.GetUserAsync(User);
             }
             else
             {
@@ -84,9 +84,9 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
         {
             returnUrl = Url.Content("~/Identity/Account/ResultPageInfo");
 
-            if (User != null && !string.IsNullOrEmpty(User.Identity.Name))
+            if (User != null)
             {
-                CurrentUser = (await _userManager.FindByEmailAsync(User.Identity.Name));
+                CurrentUser = await _userManager.GetUserAsync(User);
             }
 
             if (CurrentUser != null)
@@ -95,12 +95,15 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
 
                 foreach (var PodCastId in PodCastsChecked)
                 {
-                    await _context.PodCastUsers.AddAsync(new PodCastUser()
+                    if (!_context.PodCastUsers.Any(x => x.AppUserId == CurrentUser.Id && x.PodCastId == PodCastId))
                     {
-                        AppUserId = CurrentUser.Id,
-                        PodCastId = PodCastId
-                    });
-                    _context.SaveChanges();
+                        await _context.PodCastUsers.AddAsync(new PodCastUser()
+                        {
+                            AppUserId = CurrentUser.Id,
+                            PodCastId = PodCastId
+                        });
+                        _context.SaveChanges();
+                    }                    
                 }
 
                 var stringHTML = string.Format(

@@ -33,9 +33,9 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
 
         public async Task OnGet()
         {
-            if (User != null && !string.IsNullOrEmpty(User.Identity.Name))
+            if (User != null)
             {
-                CurrentUser = await _userManager.FindByEmailAsync(User.Identity.Name);
+                CurrentUser = await _userManager.GetUserAsync(User);
 
                 MyTeam = _context.Teams.FirstOrDefault(x => x.Id == CurrentUser.TeamId);
             }
