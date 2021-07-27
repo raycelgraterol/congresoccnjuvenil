@@ -7,6 +7,6 @@ namespace CongresoJuvenil2021.Services
 {
     public interface IEmailService
     {
-        void Send(string to, string subject, string html, string from = "congresojuvenilccn@gmail.com");
+        Task Send(string to, string subject, string html, string from = "info@congresoccnjuvenil.com");
     }
 }

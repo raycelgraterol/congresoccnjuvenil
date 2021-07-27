@@ -130,7 +130,7 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
                     </div>
                     ", MyTeam.Id, MyTeam.Link);
 
-                _emailService.Send(CurrentUser.Email, "Bienvenidos al Congreso Juvenil 2021 - MOXA a prueba de fuego", stringHTML);
+                await _emailService.Send(CurrentUser.Email, "Bienvenidos al Congreso Juvenil 2021 - MOXA a prueba de fuego", stringHTML);
 
                 return LocalRedirect(returnUrl);
             }            

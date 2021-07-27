@@ -17,6 +17,7 @@ using Microsoft.Extensions.Logging;
 using CongresoJuvenil2021.Data;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
 {
@@ -29,6 +30,7 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
         private readonly ApplicationDbContext _context;
+        private readonly IConfiguration _configuration;
 
         public RegisterModel(
             UserManager<AppUser> userManager,
@@ -36,7 +38,8 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
             SignInManager<AppUser> signInManager,
             ILogger<RegisterModel> logger,
             IEmailSender emailSender,
-            ApplicationDbContext context)
+            ApplicationDbContext context,
+            IConfiguration configuration)
         {
             _userManager = userManager;
             _roleManager = roleManager;
@@ -44,7 +47,7 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
             _logger = logger;
             _emailSender = emailSender;
             _context = context;
-
+            _configuration = configuration;
         }
 
         [BindProperty]
@@ -56,6 +59,20 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
         public string ErrorMessage { get; set; } = "";
 
         public int RandomId { get; set; }
+
+        public int minValue { 
+            get 
+            {
+                return Convert.ToInt32(string.IsNullOrEmpty(_configuration["defaultValues:minValue"]) ? "1" : _configuration["defaultValues:minValue"]);
+            } 
+        }
+
+        public int maxValue {
+            get 
+            {
+                return Convert.ToInt32(string.IsNullOrEmpty(_configuration["defaultValues:maxValue"]) ? "5" : _configuration["defaultValues:maxValue"]);
+            }
+        }
 
         public IEnumerable<SelectListItem> Congregations { get; set; }
 
@@ -121,7 +138,7 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
         {
             ReturnUrl = returnUrl;
             Random rnd = new Random();
-            RandomId = rnd.Next(1, 5);
+            RandomId = rnd.Next(minValue, maxValue);
 
 
             Congregations = await listItemsCongregation();

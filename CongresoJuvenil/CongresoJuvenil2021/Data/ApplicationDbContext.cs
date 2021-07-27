@@ -805,6 +805,12 @@ namespace CongresoJuvenil2021.Data
                         Id = 107,
                         Name = "Ninguna",
                         Direction = ""
+                    },
+                    new Congregation
+                    {
+                        Id = 108,
+                        Name = "Porlamar",
+                        Direction = ""
                     }
               );
             #endregion
