@@ -811,7 +811,32 @@ namespace CongresoJuvenil2021.Data
                         Id = 108,
                         Name = "Porlamar",
                         Direction = ""
+                    },
+                    new Congregation
+                    {
+                        Id = 109,
+                        Name = "Las Tejerías",
+                        Direction = ""
+                    },
+                    new Congregation
+                    {
+                        Id = 110,
+                        Name = "Santa Bárbara",
+                        Direction = ""
+                    },
+                    new Congregation
+                    {
+                        Id = 111,
+                        Name = "Guanare",
+                        Direction = ""
+                    },
+                    new Congregation
+                    {
+                        Id = 112,
+                        Name = "Otra congregación",
+                        Direction = ""
                     }
+
               );
             #endregion
 

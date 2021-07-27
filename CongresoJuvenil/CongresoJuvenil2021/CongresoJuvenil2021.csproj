@@ -19,6 +19,8 @@
     <Compile Remove="Data\Migrations\20210716115333_User test.Designer.cs" />
     <Compile Remove="Data\Migrations\20210717173203_Team and data.cs" />
     <Compile Remove="Data\Migrations\20210717173203_Team and data.Designer.cs" />
+    <Compile Remove="Migrations\20210727195549_add congregation others.cs" />
+    <Compile Remove="Migrations\20210727195549_add congregation others.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
