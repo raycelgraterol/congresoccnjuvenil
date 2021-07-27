@@ -48,12 +48,23 @@ namespace CongresoJuvenil2021.Models
         public int? TeamId { get; set; }
         public Team Team { get; set; }
 
+        [Display(Name = "Nombre Completo")]
         [NotMapped]
         public string FullName
         {
             get
             {
                 return (FirstName == null ? "" : FirstName) + " " + (LastName == null ? "" : LastName);
+            }
+        }
+
+        [Display(Name = "Congregación")]
+        [NotMapped]
+        public string CongregationName
+        {
+            get
+            {
+                return Congregation == null ? "" : Congregation.Name;
             }
         }
 

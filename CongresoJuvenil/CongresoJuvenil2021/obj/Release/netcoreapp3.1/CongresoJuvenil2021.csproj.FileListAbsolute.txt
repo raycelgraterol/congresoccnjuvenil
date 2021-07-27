@@ -467,3 +467,10 @@ C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\bin\Relea
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\bin\Release\netcoreapp3.1\BouncyCastle.Crypto.dll
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\Razor\Views\Dashboard\Index.cshtml.g.cs
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\Razor\Views\Dashboard\UserTeams.cshtml.g.cs
+C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\bin\Release\netcoreapp3.1\libman.json
+C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\bin\Release\netcoreapp3.1\ClosedXML.dll
+C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\bin\Release\netcoreapp3.1\DocumentFormat.OpenXml.dll
+C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\bin\Release\netcoreapp3.1\ExcelNumberFormat.dll
+C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\bin\Release\netcoreapp3.1\FastMember.dll
+C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\bin\Release\netcoreapp3.1\System.IO.Packaging.dll
+C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\Razor\Views\Users\UsersByTeam.cshtml.g.cs

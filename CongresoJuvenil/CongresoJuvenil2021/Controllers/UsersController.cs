@@ -8,6 +8,10 @@ using Microsoft.EntityFrameworkCore;
 using CongresoJuvenil2021.Data;
 using CongresoJuvenil2021.Models;
 using Microsoft.AspNetCore.Identity;
+using System.IO;
+using ClosedXML.Excel;
+using System.Data;
+using FastMember;
 
 namespace CongresoJuvenil2021.Controllers
 {
@@ -27,6 +31,48 @@ namespace CongresoJuvenil2021.Controllers
             var users = await userManager.Users.ToListAsync();
 
             return View(users);
+        }
+
+        // GET: Users
+        public async Task<IActionResult> UsersByTeam(int id)
+        {
+            var result = await userManager.Users.Include(c => c.Congregation)
+                            .Where(x => x.TeamId == id)
+                            .ToListAsync();
+
+            ViewBag.TeamId = id;
+            ViewBag.Count = result.Count;
+
+            return View(result);
+        }
+
+        public IActionResult ExportDataTabletoExcel(int id)
+        {
+            var result = userManager.Users.Include(c => c.Congregation)
+                               .Where(x => x.TeamId == id)
+                               .ToList();
+
+            DataTable table = new DataTable();
+            using (var reader = ObjectReader.Create(result, "FullName", "Age", "Email", "PhoneNumber", "CongregationName", "Instagram", "Facebook", "TikTok", "Twitter"))
+            {
+                table.Load(reader);
+            }
+
+            table.Columns["FullName"].ColumnName = "Nombre completo";
+            table.Columns["Age"].ColumnName = "Edad";
+            table.Columns["Email"].ColumnName = "Correo";
+            table.Columns["PhoneNumber"].ColumnName = "Telefono";
+            table.Columns["CongregationName"].ColumnName = "Congregacion";
+
+            using (XLWorkbook wb = new XLWorkbook())
+            {
+                wb.Worksheets.Add(table, "Grid.xlsx");
+                using (MemoryStream stream = new MemoryStream())
+                {
+                    wb.SaveAs(stream);
+                    return File(stream.ToArray(), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", string.Format("Equipo{0}.xlsx", id));
+                }
+            }
         }
 
         // GET: Users/Details/5
