@@ -38,6 +38,7 @@ namespace CongresoJuvenil2021.Controllers
         {
             var result = await userManager.Users.Include(c => c.Congregation)
                             .Where(x => x.TeamId == id)
+                            .OrderBy(o => o.Id)
                             .ToListAsync();
 
             ViewBag.TeamId = id;
