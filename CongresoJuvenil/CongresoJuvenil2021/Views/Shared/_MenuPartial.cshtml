@@ -23,6 +23,12 @@
                 <a class="dropdown-item" asp-area="" asp-controller="Users" asp-action="UsersByTeam" asp-route-id="4">Participantes Equipo 4</a>
             </div>
         </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Configuraciones</a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" asp-area="" asp-controller="Congregations" asp-action="Index">Congregaciones</a>
+            </div>
+        </li>
     }
     else if (SignInManager.IsSignedIn(User) && User.IsInRole(UserRoles.Admin))
     {

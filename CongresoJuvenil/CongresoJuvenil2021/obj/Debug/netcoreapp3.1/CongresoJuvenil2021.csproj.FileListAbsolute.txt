@@ -473,3 +473,9 @@ C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\bin\Debug
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\bin\Debug\netcoreapp3.1\ExcelNumberFormat.dll
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\bin\Debug\netcoreapp3.1\FastMember.dll
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\bin\Debug\netcoreapp3.1\System.IO.Packaging.dll
+C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Debug\netcoreapp3.1\CongresoJuvenil2021.csproj.AssemblyReference.cache
+C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Debug\netcoreapp3.1\Razor\Views\Congregations\Create.cshtml.g.cs
+C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Debug\netcoreapp3.1\Razor\Views\Congregations\Delete.cshtml.g.cs
+C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Debug\netcoreapp3.1\Razor\Views\Congregations\Details.cshtml.g.cs
+C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Debug\netcoreapp3.1\Razor\Views\Congregations\Edit.cshtml.g.cs
+C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Debug\netcoreapp3.1\Razor\Views\Congregations\Index.cshtml.g.cs

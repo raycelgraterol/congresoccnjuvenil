@@ -50,14 +50,16 @@ namespace CongresoJuvenil2021.Controllers
         {
             var result = userManager.Users.Include(c => c.Congregation)
                                .Where(x => x.TeamId == id)
+                               .OrderBy(o => o.Id)
                                .ToList();
 
             DataTable table = new DataTable();
-            using (var reader = ObjectReader.Create(result, "FullName", "Age", "Email", "PhoneNumber", "CongregationName", "Instagram", "Facebook", "TikTok", "Twitter"))
+            using (var reader = ObjectReader.Create(result, "Id", "FullName", "Age", "Email", "PhoneNumber", "CongregationName", "Instagram", "Facebook", "TikTok", "Twitter"))
             {
                 table.Load(reader);
             }
 
+            table.Columns["Id"].ColumnName = "Codigo";
             table.Columns["FullName"].ColumnName = "Nombre completo";
             table.Columns["Age"].ColumnName = "Edad";
             table.Columns["Email"].ColumnName = "Correo";
