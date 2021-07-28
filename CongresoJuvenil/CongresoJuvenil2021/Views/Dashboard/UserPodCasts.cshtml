@@ -1,0 +1,40 @@
+﻿@model IEnumerable<CongresoJuvenil2021.ViewModels.UsersPodCast>
+
+@{
+    ViewData["Title"] = "Total Usuarios por PodCasts";
+}
+
+<div class="row">
+    <div class="col-12">
+        <h2>Total Usuarios por PodCasts</h2>
+    </div>
+    <div class="col-12">
+        <table class="table mt-4">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PodCastName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.TotalUser)
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PodCastName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TotalUser)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

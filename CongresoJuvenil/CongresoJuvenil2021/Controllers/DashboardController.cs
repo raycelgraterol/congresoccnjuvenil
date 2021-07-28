@@ -71,5 +71,25 @@ namespace CongresoJuvenil2021.Controllers
 
             return View(result);
         }
+
+        // GET: Totals
+        public IActionResult UserPodCasts()
+        {
+            var result = (from T1 in _context.PodCastUsers.Include(x => x.PodCast).Include(x => x.AppUser)
+                          select new { PodCastUsers = T1 })
+                          .ToList()
+                          .GroupBy(
+                            p => p.PodCastUsers.PodCast,
+                            p => p.PodCastUsers.AppUser,
+                            (key, g) => new UsersPodCast
+                            {
+                                PodCastId = key.Id,
+                                PodCastName = key.Name,
+                                TotalUser = g.Count()
+                            })
+                          .ToList();
+
+            return View(result);
+        }
     }
 }
