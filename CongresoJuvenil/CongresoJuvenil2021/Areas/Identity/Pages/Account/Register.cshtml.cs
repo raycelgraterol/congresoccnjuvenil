@@ -58,7 +58,8 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
         [BindProperty]
         public string ErrorMessage { get; set; } = "";
 
-        public int RandomId { get; set; }
+        public int TeamId { get; set; }
+        public bool IsReferred { get; set; }
 
         public int minValue { 
             get 
@@ -117,6 +118,10 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
             [Display(Name = "Equipo")]
             public int TeamId { get; set; }
 
+            [Display(Name = "Nombre y Apellido Referido")]
+            public string ReferredBy { get; set; }
+            public bool IsReferred { get; set; }
+
             [Display(Name = "Instagram")]
             [StringLength(255)]
             public string Instagram { get; set; }
@@ -134,12 +139,21 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
             public bool NeedContact { get; set; } = false;
         }
 
-        public async Task OnGetAsync(string returnUrl = null)
+        public async Task OnGetAsync(string returnUrl = null, int teamId = 0)
         {
             ReturnUrl = returnUrl;
             Random rnd = new Random();
-            RandomId = rnd.Next(minValue, maxValue);
 
+            if (teamId <= 0 || teamId > 4)
+            {
+                this.TeamId = rnd.Next(minValue, maxValue);
+                this.IsReferred = false;
+            }
+            else
+            {
+                this.TeamId = teamId;
+                this.IsReferred = true;
+            }
 
             Congregations = await listItemsCongregation();
         }
@@ -170,7 +184,9 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
                         TikTok = Input.TikTok,
                         Twitter = Input.Twitter,
                         Facebook = Input.Facebook,
-                        NeedContact = Input.NeedContact
+                        NeedContact = Input.NeedContact,
+                        IsReferred = Input.IsReferred,
+                        ReferredBy = Input.ReferredBy
                     };
 
                     var result = await _userManager.CreateAsync(user, Input.Password);
@@ -210,6 +226,8 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
                     currentUser.Twitter = Input.Twitter;
                     currentUser.Facebook = Input.Facebook;
                     currentUser.NeedContact = Input.NeedContact;
+                    currentUser.ReferredBy = Input.ReferredBy;
+                    currentUser.IsReferred = Input.IsReferred;
 
                     var result = await _userManager.UpdateAsync(currentUser);
                     if (result.Succeeded)

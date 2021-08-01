@@ -30,7 +30,8 @@
                     <span class="text-danger mb-2">@Model.ErrorMessage </span>
                 </div>
 
-                <input asp-for="Input.TeamId" type="hidden" value="@Model.RandomId" />
+                <input asp-for="Input.TeamId" type="hidden" value="@Model.TeamId" />
+                <input asp-for="Input.IsReferred" type="hidden" value="@Model.IsReferred" />
                 <div class="col-12 col-md-4">
                     <div class="form-group">
                         <label class="moxa-lbl" asp-for="Input.FirstName"></label><span style="color:red">*</span>
@@ -66,6 +67,21 @@
                         <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
                     </div>
                 </div>
+
+                @if (Model.IsReferred)
+                {
+                    <div class="col-12 col-md-12">
+                        <text>
+                            Si fuiste referido por alguien, coloca el nombre de quien te refirió, en caso de que no sea así, avanza al siguiente paso.
+                        </text>
+                        <div class="form-group">
+                            <label class="moxa-lbl" asp-for="Input.ReferredBy"></label>
+                            <input asp-for="Input.ReferredBy" class="form-control" placeholder="Nombre y Apellido" />
+                        </div>
+                    </div>
+                }
+
+
                 <div class="col-12 col-md-12">
                     <div class="form-group">
                         <label class="moxa-lbl-lg">En caso de pertenecer a CCN, seleccione su congregación.</label>
