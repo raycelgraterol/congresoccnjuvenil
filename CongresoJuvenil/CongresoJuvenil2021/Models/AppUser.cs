@@ -45,9 +45,11 @@ namespace CongresoJuvenil2021.Models
         public int CongregationId { get; set; }
         public Congregation Congregation { get; set; }
 
+        [Display(Name = "Referido por")]
         public string ReferredBy { get; set; }
         public bool IsReferred { get; set; }
 
+        [Display(Name = "Equipo")]
         public int? TeamId { get; set; }
         public Team Team { get; set; }
 
@@ -68,6 +70,16 @@ namespace CongresoJuvenil2021.Models
             get
             {
                 return Congregation == null ? "" : Congregation.Name;
+            }
+        }
+
+        [Display(Name = "Equipo")]
+        [NotMapped]
+        public string TeamName
+        {
+            get
+            {
+                return Team == null ? "" : Team.Name;
             }
         }
 
