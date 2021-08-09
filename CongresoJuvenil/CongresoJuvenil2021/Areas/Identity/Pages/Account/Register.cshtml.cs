@@ -144,16 +144,9 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
             ReturnUrl = returnUrl;
             Random rnd = new Random();
 
-            if (teamId <= 0 || teamId > 4)
-            {
-                this.TeamId = rnd.Next(minValue, maxValue);
-                this.IsReferred = false;
-            }
-            else
-            {
-                this.TeamId = teamId;
-                this.IsReferred = true;
-            }
+            this.TeamId = rnd.Next(minValue, maxValue);
+            this.IsReferred = false;            
+            
 
             Congregations = await listItemsCongregation();
         }
