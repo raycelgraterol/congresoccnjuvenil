@@ -1,0 +1,121 @@
+﻿@model IEnumerable<CongresoJuvenil2021.Models.AppUser>
+
+@{
+    ViewData["Title"] = "Participantes por Congregacion";
+}
+
+@using (Html.BeginForm("ChangeCongragation", "Users", FormMethod.Post, new { id = "userForm", name = "userForm" }))
+{
+    <div class="row">
+        <div class="col-12 mb-3">
+            <h3>Participantes por Congregacion</h3>
+            <a class="btn btn-info" asp-area="" asp-controller="Users" asp-action="ExportDataTabletoExcelCongregation" asp-route-id="@ViewBag.CongregationId">Exportar Excel</a>
+        </div>
+        <div class="col-4">
+            Selecciona tu congregacion
+        </div>
+        <div class="col-4">
+            @Html.DropDownList("Congregations", ViewBag.Congregations as SelectList, "-- Selecciona --", new { @class = "form-control", onchange = "SelectedIndexChanged()" })
+        </div>
+        <div class="col-4">
+        </div>
+        <div class="col-12 mt-2">
+
+            <table id="tblExport" class="table table-hover table-responsive">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.FullName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Age)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Email)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.PhoneNumber)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.CongregationName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Instagram)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Facebook)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TikTok)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Twitter)
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FullName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Age)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Email)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PhoneNumber)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CongregationName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Instagram)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Facebook)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TikTok)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Twitter)
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>
+                            <h4>Total</h4>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <h4>
+                                @ViewBag.Count
+                            </h4>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    <script type="text/javascript">
+        function SelectedIndexChanged() {
+            //Form post
+            document.userForm.submit();
+        }
+    </script>
+}

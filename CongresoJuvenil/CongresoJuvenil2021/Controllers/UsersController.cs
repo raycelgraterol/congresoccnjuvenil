@@ -12,17 +12,21 @@ using System.IO;
 using ClosedXML.Excel;
 using System.Data;
 using FastMember;
+using Microsoft.AspNetCore.Http;
 
 namespace CongresoJuvenil2021.Controllers
 {
     public class UsersController : Controller
     {
         private readonly UserManager<AppUser> userManager;
+        private readonly ApplicationDbContext _context;
 
         public UsersController(
-            UserManager<AppUser> userManager)
+            UserManager<AppUser> userManager,
+            ApplicationDbContext context)
         {
             this.userManager = userManager;
+            _context = context;
         }
 
         // GET: Users
@@ -45,6 +49,69 @@ namespace CongresoJuvenil2021.Controllers
             ViewBag.Count = result.Count;
 
             return View(result);
+        }
+
+        // GET: Users By Congregation
+        public async Task<IActionResult> UsersByCongregation(int id = 0)
+        {
+            var result = await userManager.Users.Include(c => c.Congregation)
+                            .Where(x => x.CongregationId == id)
+                            .OrderBy(o => o.Id)
+                            .ToListAsync();
+
+            ViewBag.CongregationId = id;
+            ViewBag.Count = result.Count;
+
+            var selectList = _context.Congregations.OrderBy(o => o.Name).ToList()
+                                    .Select(x => 
+                                    new SelectListItem { 
+                                        Text = x.Name,
+                                        Value = x.Id.ToString(),
+                                        Selected = (x.Id == id)
+                                    });
+
+            ViewBag.Congregations = selectList;
+
+            return View(result);
+        }
+
+        [HttpPost]
+        public  IActionResult ChangeCongragation(IFormCollection obj)
+        {
+            var conid = Convert.ToInt32(obj["Congregations"].ToString());
+
+            return RedirectToAction("UsersByCongregation", "Users", new { id = conid });
+        }
+
+        public IActionResult ExportDataTabletoExcelCongregation(int id)
+        {
+            var result = userManager.Users.Include(c => c.Congregation)
+                               .Where(x => x.CongregationId == id)
+                               .OrderBy(o => o.Id)
+                               .ToList();
+
+            DataTable table = new DataTable();
+            using (var reader = ObjectReader.Create(result, "Id", "FullName", "Age", "Email", "PhoneNumber", "CongregationName", "Instagram", "Facebook", "TikTok", "Twitter"))
+            {
+                table.Load(reader);
+            }
+
+            table.Columns["Id"].ColumnName = "Codigo";
+            table.Columns["FullName"].ColumnName = "Nombre completo";
+            table.Columns["Age"].ColumnName = "Edad";
+            table.Columns["Email"].ColumnName = "Correo";
+            table.Columns["PhoneNumber"].ColumnName = "Telefono";
+            table.Columns["CongregationName"].ColumnName = "Congregacion";
+
+            using (XLWorkbook wb = new XLWorkbook())
+            {
+                wb.Worksheets.Add(table, "Grid.xlsx");
+                using (MemoryStream stream = new MemoryStream())
+                {
+                    wb.SaveAs(stream);
+                    return File(stream.ToArray(), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", string.Format("Participantes.xlsx", id));
+                }
+            }
         }
 
         public IActionResult ExportDataTabletoExcel(int id)
