@@ -60,6 +60,7 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
 
         public int TeamId { get; set; }
         public bool IsReferred { get; set; }
+        public bool IsNewConverted { get; set; }
 
         public int minValue { 
             get 
@@ -121,6 +122,7 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
             [Display(Name = "Nombre y Apellido Referido")]
             public string ReferredBy { get; set; }
             public bool IsReferred { get; set; }
+            public bool IsNewConverted { get; set; }
 
             [Display(Name = "Instagram")]
             [StringLength(255)]
@@ -144,10 +146,17 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
             ReturnUrl = returnUrl;
             Random rnd = new Random();
 
-            this.TeamId = rnd.Next(minValue, maxValue);
-            this.IsReferred = false;            
+            if (teamId != 0)
+            {
+                this.TeamId = teamId;
+                this.IsNewConverted = true;
+            }
+            else
+            {
+                this.TeamId = rnd.Next(minValue, maxValue);
+                this.IsReferred = false;
+            }
             
-
             Congregations = await listItemsCongregation();
         }
 
@@ -178,7 +187,8 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
                         Twitter = Input.Twitter,
                         Facebook = Input.Facebook,
                         NeedContact = Input.NeedContact,
-                        IsReferred = Input.IsReferred,
+                        IsReferred = false,
+                        IsNewConverted = Input.IsNewConverted,
                         ReferredBy = Input.ReferredBy
                     };
 

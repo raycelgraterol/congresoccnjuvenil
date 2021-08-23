@@ -52,6 +52,7 @@ namespace CongresoJuvenil2021.Models
         [Display(Name = "Equipo")]
         public int? TeamId { get; set; }
         public Team Team { get; set; }
+        public bool IsNewConverted { get; set; }
 
         [Display(Name = "Nombre Completo")]
         [NotMapped]
