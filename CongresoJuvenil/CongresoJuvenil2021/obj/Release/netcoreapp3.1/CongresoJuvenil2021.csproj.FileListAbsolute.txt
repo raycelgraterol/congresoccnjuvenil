@@ -483,3 +483,4 @@ C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Relea
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\Razor\Views\Dashboard\UserReferred.cshtml.g.cs
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\CongresoJuvenil2021.GeneratedMSBuildEditorConfig.editorconfig
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\Razor\Views\Users\UsersByCongregation.cshtml.g.cs
+C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\Razor\Views\Dashboard\UserNewConverted.cshtml.g.cs

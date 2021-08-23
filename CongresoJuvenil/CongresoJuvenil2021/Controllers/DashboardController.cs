@@ -127,6 +127,70 @@ namespace CongresoJuvenil2021.Controllers
             return View(result);
         }
 
+        // GET: Totals
+        public async Task<IActionResult> UserNewConverted()
+        {
+            var resultTotals = (from T1 in _context.Teams
+                                join T2 in userManager.Users on T1.Id equals T2.TeamId
+                                where T2.IsNewConverted
+                                select new { Teams = T1, Users = T2 })
+                          .ToList()
+                          .GroupBy(
+                            p => p.Teams,
+                            p => p.Users,
+                            (key, g) => new TeamCongregation
+                            {
+                                TeamId = key.Id,
+                                TeamName = key.Name,
+                                TotalUser = g.Count()
+                            })
+                          .OrderBy(x => x.TeamId)
+                          .ToList();
+
+            var result = await userManager.Users.Include(t => t.Team).Include(c => c.Congregation)
+                            .Where(x => x.IsNewConverted)
+                            .OrderBy(o => o.TeamId)
+                            .ToListAsync();
+
+            ViewBag.CountTotal = result.Count();
+            ViewBag.resultTotals = resultTotals;
+
+            return View(result);
+        }
+
+        public IActionResult ExporExcelNewConverted()
+        {
+            var result = userManager.Users.Include(t => t.Team).Include(c => c.Congregation)
+                               .Where(x => x.IsNewConverted)
+                               .OrderBy(o => o.TeamId)
+                               .ToList();
+
+            DataTable table = new DataTable();
+            using (var reader = ObjectReader.Create(result, "Id", "FullName", "Age", "Email", "PhoneNumber", "CongregationName", "TeamId", "ReferredBy", "Instagram", "Facebook", "TikTok", "Twitter"))
+            {
+                table.Load(reader);
+            }
+
+            table.Columns["Id"].ColumnName = "Codigo";
+            table.Columns["FullName"].ColumnName = "Nombre completo";
+            table.Columns["Age"].ColumnName = "Edad";
+            table.Columns["Email"].ColumnName = "Correo";
+            table.Columns["PhoneNumber"].ColumnName = "Telefono";
+            table.Columns["CongregationName"].ColumnName = "Congregacion";
+            table.Columns["TeamId"].ColumnName = "Equipo";
+            table.Columns["ReferredBy"].ColumnName = "Referido por";
+
+            using (XLWorkbook wb = new XLWorkbook())
+            {
+                wb.Worksheets.Add(table, "Grid.xlsx");
+                using (MemoryStream stream = new MemoryStream())
+                {
+                    wb.SaveAs(stream);
+                    return File(stream.ToArray(), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", string.Format("Nuevos.xlsx"));
+                }
+            }
+        }
+
         public IActionResult ExportDataTabletoExcel()
         {
             var result = userManager.Users.Include(t => t.Team).Include(c => c.Congregation)
