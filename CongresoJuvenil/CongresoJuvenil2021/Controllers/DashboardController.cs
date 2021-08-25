@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using ClosedXML.Excel;
 using CongresoJuvenil2021.Data;
 using CongresoJuvenil2021.Models;
+using CongresoJuvenil2021.Services;
 using CongresoJuvenil2021.ViewModels;
 using FastMember;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace CongresoJuvenil2021.Controllers
 {
@@ -19,13 +22,19 @@ namespace CongresoJuvenil2021.Controllers
     {
         private readonly UserManager<AppUser> userManager;
         private readonly ApplicationDbContext _context;
+        private readonly IConfiguration _configuration;
+        private readonly IEmailService _emailService;
 
         public DashboardController(
             UserManager<AppUser> userManager,
-            ApplicationDbContext context)
+            ApplicationDbContext context,
+            IConfiguration configuration,
+            IEmailService emailService)
         {
             this.userManager = userManager;
             _context = context;
+            _configuration = configuration;
+            _emailService = emailService;
         }
 
         // GET: Totals
@@ -100,9 +109,9 @@ namespace CongresoJuvenil2021.Controllers
         public async Task<IActionResult> UserReferred()
         {
             var resultTotals = (from T1 in _context.Teams
-                          join T2 in userManager.Users on T1.Id equals T2.TeamId
-                          where T2.IsReferred
-                          select new { Teams = T1, Users = T2 })
+                                join T2 in userManager.Users on T1.Id equals T2.TeamId
+                                where T2.IsReferred
+                                select new { Teams = T1, Users = T2 })
                           .ToList()
                           .GroupBy(
                             p => p.Teams,
@@ -223,5 +232,213 @@ namespace CongresoJuvenil2021.Controllers
                 }
             }
         }
+
+
+        public async Task<IActionResult> SendEmailsDayOne()
+        {
+            var stringHTML = EmailDay1();
+
+            foreach (var item in userManager.Users)
+            {
+                await _emailService.Send(item.Email, "Podcast|Día 1|Congreso juvenil|MOXA a prueba de fuego", stringHTML);
+                var milliseconds = 50;
+                Thread.Sleep(milliseconds);
+            }
+
+            return LocalRedirect("/Dashboard/UserPodCasts");
+        }
+
+        public async Task<IActionResult> SendEmailsDayTwo()
+        {
+            var stringHTML = EmailDay2();
+
+            foreach (var item in userManager.Users)
+            {
+                await _emailService.Send(item.Email, "Podcast|Día 2|Congreso juvenil|MOXA a prueba de fuego", stringHTML);
+                var milliseconds = 50;
+                Thread.Sleep(milliseconds);
+            }
+
+            return LocalRedirect("/Dashboard/UserPodCasts");
+        }
+
+        public async Task<IActionResult> SendEmailsDayThree()
+        {
+            var stringHTML = EmailDay3();
+
+            foreach (var item in userManager.Users)
+            {
+                await _emailService.Send(item.Email, "Conferencias|Día 1|Congreso juvenil|MOXA a prueba de fuego", stringHTML);
+                var milliseconds = 50;
+                Thread.Sleep(milliseconds);
+            }
+
+            return LocalRedirect("/Dashboard/UserPodCasts");
+        }
+
+        public async Task<IActionResult> SendEmailsDayFour()
+        {
+            var stringHTML = EmailDay4();
+
+            foreach (var item in userManager.Users)
+            {
+                await _emailService.Send(item.Email, "Conferencias|Día 2|Congreso juvenil|MOXA a prueba de fuego", stringHTML);
+                var milliseconds = 50;
+                Thread.Sleep(milliseconds);
+            }
+
+            return LocalRedirect("/Dashboard/UserPodCasts");
+        }
+
+        #region Zona Privada
+
+        private string EmailDay1()
+        {
+            var title = "¡Bienvenido a los podcast!";
+            var link = _configuration["defaultValues:Enlace1"];
+
+            var stringHTML = string.Format(
+                    @"
+                    <div style='text-align: center; padding:5px; margin-bottom:10px'>
+                        <img width='900px' height='auto' src='https://congresoccnjuvenil.com/img/banner-correo.png' alt='' />
+                    </div>
+                    <div style='text-align: center; padding:5px;'>                        
+                        <h2>{0}</h2>
+                        <p style='font-size: 16px;'>Gracias por haberte inscrito en la segunda fase del congreso juvenil.</p>
+                        <p style='font-size: 16px;'>¡Contamos con tu participación para este día, que será especial para todos!</p>
+                        <p style='font-size: 16px;font-weight: bold;'>Podrás verlo a través del canal de YouTube de CCN Juvenil, que tendrá un ÚNICO enlace en todo este día.</p>
+                        <br />
+                        <p style='font-size: 16px;'>Te dejamos aquí la información que necesitas para conectarte:</p>
+                        <p style='font-size: 16px;'><b>Fecha:</b> miércoles 25 de agosto.</p>
+                        <p style='font-size: 16px;'><b>Hora:</b> 2:50 p.m. hora Venezuela.</p>
+                        <p style='font-size: 16px;'><b>Enlace de transmisión:</b> {1}</p>
+                        <a href='{1}' style='color: #fff;background-color: #17a2b8;border-color: #17a2b8;text-decoration: none;padding: 10px;border-radius: .25rem;margin-bottom:10px;'>
+                        Link Zoom</a>
+                        <br />
+                        <p style='font-size: 16px;'>Guarda este correo en tus destacados  para que te puedas conectar en pocos minutos y tengas toda la información al alcance de tu mano.</p>
+                        <br />
+                        <p style='font-size: 16px; margin-top: 30px;'>Cualquier duda, estamos pendientes a través de este medio o de nuestra cuenta de Instagram @ccnjuvenil</p>
+                        <a href='https://www.instagram.com/ccnjuvenil/' style='color: #fff;background-color: #17a2b8;border-color: #17a2b8;text-decoration: none;padding: 10px;border-radius: .25rem;margin-bottom:10px;'>
+                        @ccnjuvenil</a>
+                        <br />
+                        <p style='font-size: 16px;font-weight: bold;'>¡MOXA a prueba de fuego!</p>
+                        <br />
+                    </div>
+                    ", title, link);
+
+            return stringHTML;
+        }
+
+        private string EmailDay2()
+        {
+            var title = "¡Finalizamos los podcast!";
+            var link = _configuration["defaultValues:Enlace2"];
+
+            var stringHTML = string.Format(
+                    @"
+                    <div style='text-align: center; padding:5px; margin-bottom:10px'>
+                        <img width='900px' height='auto' src='https://congresoccnjuvenil.com/img/banner-correo.png' alt='' />
+                    </div>
+                    <div style='text-align: center; padding:5px;'>                        
+                        <h2>{0}</h2>
+                        <p style='font-size: 16px;'>¡Contamos con tu participación para este día, que será especial para todos!</p>
+                        <p style='font-size: 16px;font-weight: bold;'>Podrás verlo a través del canal de YouTube de CCN Juvenil, que tendrá un ÚNICO enlace en todo este día.</p>
+                        <br />
+                        <p style='font-size: 16px;'>Te dejamos aquí la información que necesitas para conectarte:</p>
+                        <p style='font-size: 16px;'><b>Fecha:</b> jueves 26 de agosto.</p>
+                        <p style='font-size: 16px;'><b>Hora:</b> 2:50 p.m. hora Venezuela.</p>
+                        <p style='font-size: 16px;'><b>Enlace de transmisión:</b> {1}</p>
+                        <a href='{1}' style='color: #fff;background-color: #17a2b8;border-color: #17a2b8;text-decoration: none;padding: 10px;border-radius: .25rem;margin-bottom:10px;'>
+                        Link Zoom</a>
+                        <br />
+                        <p style='font-size: 16px;'>Guarda este correo en tus destacados  para que te puedas conectar en pocos minutos y tengas toda la información al alcance de tu mano.</p>
+                        <br />
+                        <p style='font-size: 16px; margin-top: 30px;'>Cualquier duda, estamos pendientes a través de este medio o de nuestra cuenta de Instagram @ccnjuvenil</p>
+                        <a href='https://www.instagram.com/ccnjuvenil/' style='color: #fff;background-color: #17a2b8;border-color: #17a2b8;text-decoration: none;padding: 10px;border-radius: .25rem;margin-bottom:10px;'>
+                        @ccnjuvenil</a>
+                        <br />
+                        <p style='font-size: 16px;font-weight: bold;'>¡MOXA a prueba de fuego!</p>
+                        <br />
+                    </div>
+                    ", title, link);
+
+            return stringHTML;
+        }
+
+        private string EmailDay3()
+        {
+            var title = "¡Bienvenidos a las conferencias!";
+            var link = _configuration["defaultValues:Enlace3"];
+
+            var stringHTML = string.Format(
+                    @"
+                    <div style='text-align: center; padding:5px; margin-bottom:10px'>
+                        <img width='900px' height='auto' src='https://congresoccnjuvenil.com/img/banner-correo.png' alt='' />
+                    </div>
+                    <div style='text-align: center; padding:5px;'>                        
+                        <h2>{0}</h2>
+                        <p style='font-size: 16px;'>Hemos llegado a la última fase de este congreso y vamos a estar activos con TODO.</p>
+                        <p style='font-size: 16px;'>¡Contamos con tu participación para este día, que será especial para todos!</p>
+                        <p style='font-size: 16px;font-weight: bold;'>Podrás verlo a través del canal de YouTube de CCN Juvenil, que tendrá un ÚNICO enlace en todo este día.</p>
+                        <br />
+                        <p style='font-size: 16px;'>Te dejamos aquí la información que necesitas para conectarte:</p>
+                        <p style='font-size: 16px;'><b>Fecha:</b> viernes 27 de agosto.</p>
+                        <p style='font-size: 16px;'><b>Hora:</b> 3:50 p.m. hora Venezuela</p>
+                        <p style='font-size: 16px;'><b>Enlace de transmisión:</b> {1}</p>
+                        <a href='{1}' style='color: #fff;background-color: #17a2b8;border-color: #17a2b8;text-decoration: none;padding: 10px;border-radius: .25rem;margin-bottom:10px;'>
+                        Link Youtube</a>
+                        <br />
+                        <p style='font-size: 16px;'>Guarda este correo en tus destacados  para que te puedas conectar en pocos minutos y tengas toda la información al alcance de tu mano.</p>
+                        <br />
+                        <p style='font-size: 16px; margin-top: 30px;'>Cualquier duda, estamos pendientes a través de este medio o de nuestra cuenta de Instagram @ccnjuvenil</p>
+                        <a href='https://www.instagram.com/ccnjuvenil/' style='color: #fff;background-color: #17a2b8;border-color: #17a2b8;text-decoration: none;padding: 10px;border-radius: .25rem;margin-bottom:10px;'>
+                        @ccnjuvenil</a>
+                        <br />
+                        <p style='font-size: 16px;font-weight: bold;'>¡MOXA a prueba de fuego!</p>
+                        <br />
+                    </div>
+                    ", title, link);
+
+            return stringHTML;
+        }
+
+        private string EmailDay4()
+        {
+            var title = "¡Cerremos con broche de oro!";
+            var link = _configuration["defaultValues:Enlace4"];
+
+            var stringHTML = string.Format(
+                    @"
+                    <div style='text-align: center; padding:5px; margin-bottom:10px'>
+                        <img width='900px' height='auto' src='https://congresoccnjuvenil.com/img/banner-correo.png' alt='' />
+                    </div>
+                    <div style='text-align: center; padding:5px;'>                        
+                        <h2>{0}</h2>
+                        <p style='font-size: 16px;'>Hemos llegado a la última fase y último día de este congreso y vamos a estar activos con TODO.</p>
+                        <p style='font-size: 16px;'>¡Contamos con tu participación para este día, que será especial para todos!</p>
+                        <p style='font-size: 16px;font-weight: bold;'>Podrás verlo a través del canal de YouTube de CCN Juvenil, que tendrá un ÚNICO enlace en todo este día.</p>
+                        <br />
+                        <p style='font-size: 16px;'>Te dejamos aquí la información que necesitas para conectarte:</p>
+                        <p style='font-size: 16px;'><b>Fecha:</b> sábado 28 de agosto.</p>
+                        <p style='font-size: 16px;'><b>Hora:</b> 8:50 a.m. hora Venezuela.</p>
+                        <p style='font-size: 16px;'><b>Enlace de transmisión:</b> {1}</p>
+                        <a href='{1}' style='color: #fff;background-color: #17a2b8;border-color: #17a2b8;text-decoration: none;padding: 10px;border-radius: .25rem;margin-bottom:10px;'>
+                        Link Youtube</a>
+                        <br />
+                        <p style='font-size: 16px;'>Guarda este correo en tus destacados  para que te puedas conectar en pocos minutos y tengas toda la información al alcance de tu mano.</p>
+                        <br />
+                        <p style='font-size: 16px; margin-top: 30px;'>Cualquier duda, estamos pendientes a través de este medio o de nuestra cuenta de Instagram @ccnjuvenil</p>
+                        <a href='https://www.instagram.com/ccnjuvenil/' style='color: #fff;background-color: #17a2b8;border-color: #17a2b8;text-decoration: none;padding: 10px;border-radius: .25rem;margin-bottom:10px;'>
+                        @ccnjuvenil</a>
+                        <br />
+                        <p style='font-size: 16px;font-weight: bold;'>¡MOXA a prueba de fuego!</p>
+                        <br />
+                    </div>
+                    ", title, link);
+
+            return stringHTML;
+        }
+
+        #endregion
     }
 }
