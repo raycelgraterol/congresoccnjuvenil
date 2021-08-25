@@ -240,7 +240,7 @@ namespace CongresoJuvenil2021.Controllers
 
             foreach (var item in userManager.Users)
             {
-                await _emailService.Send(item.Email, "Podcast|Día 1|Congreso juvenil|MOXA a prueba de fuego", stringHTML);
+                await _emailService.Send(item.Email, "Podcast | Día 1 | Congreso juvenil | MOXA a prueba de fuego", stringHTML);
                 var milliseconds = 50;
                 Thread.Sleep(milliseconds);
             }
@@ -254,7 +254,7 @@ namespace CongresoJuvenil2021.Controllers
 
             foreach (var item in userManager.Users)
             {
-                await _emailService.Send(item.Email, "Podcast|Día 2|Congreso juvenil|MOXA a prueba de fuego", stringHTML);
+                await _emailService.Send(item.Email, "Podcast | Día 2 | Congreso juvenil | MOXA a prueba de fuego", stringHTML);
                 var milliseconds = 50;
                 Thread.Sleep(milliseconds);
             }
@@ -268,7 +268,7 @@ namespace CongresoJuvenil2021.Controllers
 
             foreach (var item in userManager.Users)
             {
-                await _emailService.Send(item.Email, "Conferencias|Día 1|Congreso juvenil|MOXA a prueba de fuego", stringHTML);
+                await _emailService.Send(item.Email, "Conferencias | Día 1 | Congreso juvenil | MOXA a prueba de fuego", stringHTML);
                 var milliseconds = 50;
                 Thread.Sleep(milliseconds);
             }
@@ -282,7 +282,7 @@ namespace CongresoJuvenil2021.Controllers
 
             foreach (var item in userManager.Users)
             {
-                await _emailService.Send(item.Email, "Conferencias|Día 2|Congreso juvenil|MOXA a prueba de fuego", stringHTML);
+                await _emailService.Send(item.Email, "Conferencias | Día 2 | Congreso juvenil | MOXA a prueba de fuego", stringHTML).ConfigureAwait(false);
                 var milliseconds = 50;
                 Thread.Sleep(milliseconds);
             }
