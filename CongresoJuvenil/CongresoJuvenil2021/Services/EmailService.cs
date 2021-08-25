@@ -4,6 +4,7 @@ using MimeKit;
 using MimeKit.Text;
 using Microsoft.Extensions.Configuration;
 using System.Threading.Tasks;
+using System;
 
 namespace CongresoJuvenil2021.Services
 {
@@ -29,6 +30,7 @@ namespace CongresoJuvenil2021.Services
                 email.From.Add(address);
                 email.To.Add(MailboxAddress.Parse(to));
                 email.Subject = subject;
+                email.Headers.Add("X-Mailer-Machine", Environment.MachineName);
                 email.Body = new TextPart(TextFormat.Html) { Text = html };
 
                 // send email

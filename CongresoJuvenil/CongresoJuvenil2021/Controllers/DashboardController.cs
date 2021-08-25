@@ -86,7 +86,7 @@ namespace CongresoJuvenil2021.Controllers
         }
 
         // GET: Totals
-        public IActionResult UserPodCasts()
+        public IActionResult UserPodCasts(string message = "Iniciado")
         {
             var result = (from T1 in _context.PodCastUsers.Include(x => x.PodCast).Include(x => x.AppUser)
                           select new { PodCastUsers = T1 })
@@ -101,6 +101,8 @@ namespace CongresoJuvenil2021.Controllers
                                 TotalUser = g.Count()
                             })
                           .ToList();
+
+            ViewBag.message = message;
 
             return View(result);
         }
@@ -234,60 +236,164 @@ namespace CongresoJuvenil2021.Controllers
         }
 
 
-        public async Task<IActionResult> SendEmailsDayOne()
+        public async Task<IActionResult> SendEmailsDayOne(int id = 0)
         {
             var stringHTML = EmailDay1();
+            var currentUsersLot = new List<AppUser>();
+            var quantity = userManager.Users.Count() / 4;
 
-            foreach (var item in userManager.Users)
+            switch (id)
+            {
+                case 1:
+                    // code block
+                    currentUsersLot = userManager.Users.Take(quantity).ToList();
+                    break;
+                case 2:
+                    // code block
+                    currentUsersLot = userManager.Users.Skip(quantity).Take(quantity).ToList();
+                    break;
+                case 3:
+                    // code block
+                    currentUsersLot = userManager.Users.Skip(quantity * 2).Take(quantity).ToList();
+                    break;
+                case 4:
+                    // code block
+                    currentUsersLot = userManager.Users.Skip(quantity * 3).ToList();
+                    break;
+                default:
+                    // code block
+                    break;
+            }
+
+            foreach (var item in currentUsersLot)
             {
                 await _emailService.Send(item.Email, "Podcast | Día 1 | Congreso juvenil | MOXA a prueba de fuego", stringHTML);
                 var milliseconds = 50;
                 Thread.Sleep(milliseconds);
             }
 
-            return LocalRedirect("/Dashboard/UserPodCasts");
+            return LocalRedirect("/Dashboard/UserPodCasts?message=enviados");
         }
 
-        public async Task<IActionResult> SendEmailsDayTwo()
+        public async Task<IActionResult> SendEmailsDayTwo(int id = 0)
         {
             var stringHTML = EmailDay2();
+            var currentUsersLot = new List<AppUser>();
+            var quantity = userManager.Users.Count()/4;
 
-            foreach (var item in userManager.Users)
+
+            switch (id)
+            {
+                case 1:
+                    // code block
+                    currentUsersLot = userManager.Users.Take(quantity).ToList();
+                    break;
+                case 2:
+                    // code block
+                    currentUsersLot = userManager.Users.Skip(quantity).Take(quantity).ToList();
+                    break;
+                case 3:
+                    // code block
+                    currentUsersLot = userManager.Users.Skip(quantity * 2).Take(quantity).ToList();
+                    break;
+                case 4:
+                    // code block
+                    currentUsersLot = userManager.Users.Skip(quantity * 3).ToList();
+                    break;
+                default:
+                    // code block
+                    break;
+            }
+
+
+            foreach (var item in currentUsersLot)
             {
                 await _emailService.Send(item.Email, "Podcast | Día 2 | Congreso juvenil | MOXA a prueba de fuego", stringHTML);
                 var milliseconds = 50;
                 Thread.Sleep(milliseconds);
             }
 
-            return LocalRedirect("/Dashboard/UserPodCasts");
+            return LocalRedirect("/Dashboard/UserPodCasts?message=enviados");
         }
 
-        public async Task<IActionResult> SendEmailsDayThree()
+        public async Task<IActionResult> SendEmailsDayThree(int id = 0)
         {
             var stringHTML = EmailDay3();
+            var currentUsersLot = new List<AppUser>();
+            var quantity = userManager.Users.Count() / 4;
 
-            foreach (var item in userManager.Users)
+
+            switch (id)
+            {
+                case 1:
+                    // code block
+                    currentUsersLot = userManager.Users.Take(quantity).ToList();
+                    break;
+                case 2:
+                    // code block
+                    currentUsersLot = userManager.Users.Skip(quantity).Take(quantity).ToList();
+                    break;
+                case 3:
+                    // code block
+                    currentUsersLot = userManager.Users.Skip(quantity * 2).Take(quantity).ToList();
+                    break;
+                case 4:
+                    // code block
+                    currentUsersLot = userManager.Users.Skip(quantity * 3).ToList();
+                    break;
+                default:
+                    // code block
+                    break;
+            }
+
+            foreach (var item in currentUsersLot)
             {
                 await _emailService.Send(item.Email, "Conferencias | Día 1 | Congreso juvenil | MOXA a prueba de fuego", stringHTML);
                 var milliseconds = 50;
                 Thread.Sleep(milliseconds);
             }
 
-            return LocalRedirect("/Dashboard/UserPodCasts");
+            return LocalRedirect("/Dashboard/UserPodCasts?message=enviados");
         }
 
-        public async Task<IActionResult> SendEmailsDayFour()
+        public async Task<IActionResult> SendEmailsDayFour(int id = 0)
         {
             var stringHTML = EmailDay4();
+            var currentUsersLot = new List<AppUser>();
+            var quantity = userManager.Users.Count() / 4;
 
-            foreach (var item in userManager.Users)
+
+            switch (id)
+            {
+                case 1:
+                    // code block
+                    currentUsersLot = userManager.Users.Take(quantity).ToList();
+                    break;
+                case 2:
+                    // code block
+                    currentUsersLot = userManager.Users.Skip(quantity).Take(quantity).ToList();
+                    break;
+                case 3:
+                    // code block
+                    currentUsersLot = userManager.Users.Skip(quantity * 2).Take(quantity).ToList();
+                    break;
+                case 4:
+                    // code block
+                    currentUsersLot = userManager.Users.Skip(quantity * 3).ToList();
+                    break;
+                default:
+                    // code block
+                    break;
+            }
+
+            foreach (var item in currentUsersLot)
             {
                 await _emailService.Send(item.Email, "Conferencias | Día 2 | Congreso juvenil | MOXA a prueba de fuego", stringHTML).ConfigureAwait(false);
                 var milliseconds = 50;
                 Thread.Sleep(milliseconds);
             }
 
-            return LocalRedirect("/Dashboard/UserPodCasts");
+            return LocalRedirect("/Dashboard/UserPodCasts?message=enviados");
         }
 
         #region Zona Privada
@@ -306,7 +412,7 @@ namespace CongresoJuvenil2021.Controllers
                         <h2>{0}</h2>
                         <p style='font-size: 16px;'>Gracias por haberte inscrito en la segunda fase del congreso juvenil.</p>
                         <p style='font-size: 16px;'>¡Contamos con tu participación para este día, que será especial para todos!</p>
-                        <p style='font-size: 16px;font-weight: bold;'>Podrás verlo a través del canal de YouTube de CCN Juvenil, que tendrá un ÚNICO enlace en todo este día.</p>
+                        <p style='font-size: 16px;font-weight: bold;'>Podrás verlo a través de una sala de zoom que tendrá un ÚNICO enlace en todo este día.</p>
                         <br />
                         <p style='font-size: 16px;'>Te dejamos aquí la información que necesitas para conectarte:</p>
                         <p style='font-size: 16px;'><b>Fecha:</b> miércoles 25 de agosto.</p>
@@ -342,7 +448,7 @@ namespace CongresoJuvenil2021.Controllers
                     <div style='text-align: center; padding:5px;'>                        
                         <h2>{0}</h2>
                         <p style='font-size: 16px;'>¡Contamos con tu participación para este día, que será especial para todos!</p>
-                        <p style='font-size: 16px;font-weight: bold;'>Podrás verlo a través del canal de YouTube de CCN Juvenil, que tendrá un ÚNICO enlace en todo este día.</p>
+                        <p style='font-size: 16px;font-weight: bold;'>Podrás verlo a través de una sala de zoom que tendrá un ÚNICO enlace en todo este día.</p>
                         <br />
                         <p style='font-size: 16px;'>Te dejamos aquí la información que necesitas para conectarte:</p>
                         <p style='font-size: 16px;'><b>Fecha:</b> jueves 26 de agosto.</p>
