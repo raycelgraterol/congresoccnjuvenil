@@ -181,6 +181,8 @@ C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Relea
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\PubTmp\Out\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\PubTmp\Out\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\PubTmp\Out\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\PubTmp\Out\CongresoJuvenil2021.Views.dll
+C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\PubTmp\Out\CongresoJuvenil2021.Views.pdb
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\Identity\css\site.css
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\Identity\favicon.ico
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\Identity\js\site.js
@@ -217,6 +219,4 @@ C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Relea
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\Identity\lib\jquery\dist\jquery.min.js
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\Identity\lib\jquery\dist\jquery.min.map
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\Identity\lib\jquery\LICENSE.txt
-C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\PubTmp\Out\CongresoJuvenil2021.Views.dll
-C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\PubTmp\Out\CongresoJuvenil2021.Views.pdb
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\PubTmp\Out\CongresoJuvenil2021.deps.json

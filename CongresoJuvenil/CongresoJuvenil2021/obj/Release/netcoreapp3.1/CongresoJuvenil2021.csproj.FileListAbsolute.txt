@@ -408,7 +408,6 @@ C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Relea
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\CongresoJuvenil2021.RazorAssemblyInfo.cs
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\staticwebassets\CongresoJuvenil2021.StaticWebAssets.Manifest.cache
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\staticwebassets\CongresoJuvenil2021.StaticWebAssets.xml
-C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\scopedcss\bundle\CongresoJuvenil2021.styles.css
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\CongresoJuvenil2021.TagHelpers.input.cache
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\CongresoJuvenil2021.TagHelpers.output.cache
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Release\netcoreapp3.1\CongresoJuvenil2021.RazorCoreGenerate.cache

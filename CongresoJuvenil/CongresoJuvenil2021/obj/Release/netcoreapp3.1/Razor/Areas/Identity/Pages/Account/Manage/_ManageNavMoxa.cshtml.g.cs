@@ -58,7 +58,9 @@ using CongresoJuvenil2021.Areas.Identity.Pages.Account.Manage;
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5c261f57b58f4f6008d02c47cd0dd5453795e40d", @"/Areas/Identity/Pages/_ViewImports.cshtml")]
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"149cdb5b4f496adaf045f76bfe7df74cfa490acb", @"/Areas/Identity/Pages/Account/_ViewImports.cshtml")]
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5f81482be977b92a841305dd49dbe737ba7dadcd", @"/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml")]
+    #nullable restore
     public class Areas_Identity_Pages_Account_Manage__ManageNavMoxa : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
+    #nullable disable
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("id", new global::Microsoft.AspNetCore.Html.HtmlString("profile"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_1 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-page", "./Index", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -105,7 +107,7 @@ using CongresoJuvenil2021.Areas.Identity.Pages.Account.Manage;
 #line hidden
 #nullable disable
             WriteLiteral("<ul class=\"nav nav-pills flex-column\">\r\n    <li class=\"nav-item\">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9088f0a8b7ed8e37c3f10d18e37ede4cb034fd309049", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9088f0a8b7ed8e37c3f10d18e37ede4cb034fd309095", async() => {
                 WriteLiteral("Profile");
             }
             );
@@ -132,7 +134,7 @@ AddHtmlAttributeValue(" ", 234, ManageNavPages.IndexNavClass(ViewContext), 235, 
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("</li>\r\n    <li class=\"nav-item\">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9088f0a8b7ed8e37c3f10d18e37ede4cb034fd3010927", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9088f0a8b7ed8e37c3f10d18e37ede4cb034fd3010973", async() => {
                 WriteLiteral("Email");
             }
             );
@@ -159,7 +161,7 @@ AddHtmlAttributeValue(" ", 372, ManageNavPages.EmailNavClass(ViewContext), 373, 
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("</li>\r\n    <li class=\"nav-item\">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9088f0a8b7ed8e37c3f10d18e37ede4cb034fd3012804", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9088f0a8b7ed8e37c3f10d18e37ede4cb034fd3012850", async() => {
                 WriteLiteral("Password");
             }
             );
@@ -195,7 +197,7 @@ AddHtmlAttributeValue(" ", 506, ManageNavPages.ChangePasswordNavClass(ViewContex
 #line hidden
 #nullable disable
             WriteLiteral("    <li id=\"external-logins\" class=\"nav-item\">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9088f0a8b7ed8e37c3f10d18e37ede4cb034fd3014992", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9088f0a8b7ed8e37c3f10d18e37ede4cb034fd3015038", async() => {
                 WriteLiteral("External logins");
             }
             );
@@ -230,7 +232,7 @@ AddHtmlAttributeValue(" ", 748, ManageNavPages.ExternalLoginsNavClass(ViewContex
 #line hidden
 #nullable disable
             WriteLiteral("    <li class=\"nav-item\">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9088f0a8b7ed8e37c3f10d18e37ede4cb034fd3017137", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9088f0a8b7ed8e37c3f10d18e37ede4cb034fd3017183", async() => {
                 WriteLiteral("Two-factor authentication");
             }
             );
@@ -257,7 +259,7 @@ AddHtmlAttributeValue(" ", 906, ManageNavPages.TwoFactorAuthenticationNavClass(V
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("</li>\r\n    <li class=\"nav-item\">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9088f0a8b7ed8e37c3f10d18e37ede4cb034fd3019053", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9088f0a8b7ed8e37c3f10d18e37ede4cb034fd3019099", async() => {
                 WriteLiteral("Personal data");
             }
             );
@@ -286,18 +288,30 @@ AddHtmlAttributeValue(" ", 1101, ManageNavPages.PersonalDataNavClass(ViewContext
             WriteLiteral("</li>\r\n</ul>\r\n");
         }
         #pragma warning restore 1998
+        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public SignInManager<AppUser> SignInManager { get; private set; }
+        public SignInManager<AppUser> SignInManager { get; private set; } = default!;
+        #nullable disable
+        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; }
+        public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; } = default!;
+        #nullable disable
+        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.IUrlHelper Url { get; private set; }
+        public global::Microsoft.AspNetCore.Mvc.IUrlHelper Url { get; private set; } = default!;
+        #nullable disable
+        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.IViewComponentHelper Component { get; private set; }
+        public global::Microsoft.AspNetCore.Mvc.IViewComponentHelper Component { get; private set; } = default!;
+        #nullable disable
+        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.Rendering.IJsonHelper Json { get; private set; }
+        public global::Microsoft.AspNetCore.Mvc.Rendering.IJsonHelper Json { get; private set; } = default!;
+        #nullable disable
+        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper<dynamic> Html { get; private set; }
+        public global::Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper<dynamic> Html { get; private set; } = default!;
+        #nullable disable
     }
 }
 #pragma warning restore 1591

@@ -28,7 +28,9 @@ using CongresoJuvenil2021.Models;
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"e9a265460ad0d07b24a8ffa5e312291f3c190cba", @"/Views/Dashboard/UserPodCasts.cshtml")]
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f5f0b24ec27b17d58191cf48b324735d350287b0", @"/Views/_ViewImports.cshtml")]
+    #nullable restore
     public class Views_Dashboard_UserPodCasts : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<CongresoJuvenil2021.ViewModels.UsersPodCast>>
+    #nullable disable
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("btn btn-info mb-1"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_1 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-area", "", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -83,7 +85,7 @@ using CongresoJuvenil2021.Models;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n            <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\r\n                <span aria-hidden=\"true\">&times;</span>\r\n            </button>\r\n        </div>\r\n    </div>\r\n    <div class=\"col-md-3 col-6\">\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e9a265460ad0d07b24a8ffa5e312291f3c190cba7685", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e9a265460ad0d07b24a8ffa5e312291f3c190cba7731", async() => {
                 WriteLiteral("\r\n            Enviar Correo Dia 1\r\n        ");
             }
             );
@@ -110,7 +112,7 @@ using CongresoJuvenil2021.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e9a265460ad0d07b24a8ffa5e312291f3c190cba9888", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e9a265460ad0d07b24a8ffa5e312291f3c190cba9934", async() => {
                 WriteLiteral("\r\n            Enviar Correo Dia 1\r\n        ");
             }
             );
@@ -137,7 +139,7 @@ using CongresoJuvenil2021.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e9a265460ad0d07b24a8ffa5e312291f3c190cba12091", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e9a265460ad0d07b24a8ffa5e312291f3c190cba12137", async() => {
                 WriteLiteral("\r\n            Enviar Correo Dia 1\r\n        ");
             }
             );
@@ -164,7 +166,7 @@ using CongresoJuvenil2021.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e9a265460ad0d07b24a8ffa5e312291f3c190cba14295", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e9a265460ad0d07b24a8ffa5e312291f3c190cba14341", async() => {
                 WriteLiteral("\r\n            Enviar Correo Dia 1\r\n        ");
             }
             );
@@ -191,7 +193,7 @@ using CongresoJuvenil2021.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n    </div>\r\n    <div class=\"col-md-3 col-6\">\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e9a265460ad0d07b24a8ffa5e312291f3c190cba16551", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e9a265460ad0d07b24a8ffa5e312291f3c190cba16597", async() => {
                 WriteLiteral("\r\n            Enviar Correo Dia 2\r\n        ");
             }
             );
@@ -218,7 +220,7 @@ using CongresoJuvenil2021.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e9a265460ad0d07b24a8ffa5e312291f3c190cba18755", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e9a265460ad0d07b24a8ffa5e312291f3c190cba18801", async() => {
                 WriteLiteral("\r\n            Enviar Correo Dia 2\r\n        ");
             }
             );
@@ -245,7 +247,7 @@ using CongresoJuvenil2021.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e9a265460ad0d07b24a8ffa5e312291f3c190cba20959", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e9a265460ad0d07b24a8ffa5e312291f3c190cba21005", async() => {
                 WriteLiteral("\r\n            Enviar Correo Dia 2\r\n        ");
             }
             );
@@ -272,7 +274,7 @@ using CongresoJuvenil2021.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e9a265460ad0d07b24a8ffa5e312291f3c190cba23163", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e9a265460ad0d07b24a8ffa5e312291f3c190cba23209", async() => {
                 WriteLiteral("\r\n            Enviar Correo Dia 2\r\n        ");
             }
             );
@@ -299,7 +301,7 @@ using CongresoJuvenil2021.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n    </div>\r\n    <div class=\"col-md-3 col-6\">\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e9a265460ad0d07b24a8ffa5e312291f3c190cba25419", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e9a265460ad0d07b24a8ffa5e312291f3c190cba25465", async() => {
                 WriteLiteral("\r\n            Enviar Correo Dia 3\r\n        ");
             }
             );
@@ -326,7 +328,7 @@ using CongresoJuvenil2021.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e9a265460ad0d07b24a8ffa5e312291f3c190cba27623", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e9a265460ad0d07b24a8ffa5e312291f3c190cba27669", async() => {
                 WriteLiteral("\r\n            Enviar Correo Dia 3\r\n        ");
             }
             );
@@ -353,7 +355,7 @@ using CongresoJuvenil2021.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e9a265460ad0d07b24a8ffa5e312291f3c190cba29827", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e9a265460ad0d07b24a8ffa5e312291f3c190cba29873", async() => {
                 WriteLiteral("\r\n            Enviar Correo Dia 3\r\n        ");
             }
             );
@@ -380,7 +382,7 @@ using CongresoJuvenil2021.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e9a265460ad0d07b24a8ffa5e312291f3c190cba32031", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e9a265460ad0d07b24a8ffa5e312291f3c190cba32077", async() => {
                 WriteLiteral("\r\n            Enviar Correo Dia 3\r\n        ");
             }
             );
@@ -407,7 +409,7 @@ using CongresoJuvenil2021.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n    </div>\r\n    <div class=\"col-md-3 col-6\">\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e9a265460ad0d07b24a8ffa5e312291f3c190cba34287", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e9a265460ad0d07b24a8ffa5e312291f3c190cba34333", async() => {
                 WriteLiteral("\r\n            Enviar Correo Dia 4\r\n        ");
             }
             );
@@ -434,7 +436,7 @@ using CongresoJuvenil2021.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e9a265460ad0d07b24a8ffa5e312291f3c190cba36493", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e9a265460ad0d07b24a8ffa5e312291f3c190cba36539", async() => {
                 WriteLiteral("\r\n            Enviar Correo Dia 4\r\n        ");
             }
             );
@@ -461,7 +463,7 @@ using CongresoJuvenil2021.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e9a265460ad0d07b24a8ffa5e312291f3c190cba38699", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e9a265460ad0d07b24a8ffa5e312291f3c190cba38745", async() => {
                 WriteLiteral("\r\n            Enviar Correo Dia 4\r\n        ");
             }
             );
@@ -488,7 +490,7 @@ using CongresoJuvenil2021.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e9a265460ad0d07b24a8ffa5e312291f3c190cba40905", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e9a265460ad0d07b24a8ffa5e312291f3c190cba40951", async() => {
                 WriteLiteral("\r\n            Enviar Correo Dia 4\r\n        ");
             }
             );
@@ -566,16 +568,26 @@ using CongresoJuvenil2021.Models;
             WriteLiteral("            </tbody>\r\n        </table>\r\n    </div>\r\n</div>\r\n\r\n\r\n");
         }
         #pragma warning restore 1998
+        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; }
+        public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; } = default!;
+        #nullable disable
+        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.IUrlHelper Url { get; private set; }
+        public global::Microsoft.AspNetCore.Mvc.IUrlHelper Url { get; private set; } = default!;
+        #nullable disable
+        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.IViewComponentHelper Component { get; private set; }
+        public global::Microsoft.AspNetCore.Mvc.IViewComponentHelper Component { get; private set; } = default!;
+        #nullable disable
+        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.Rendering.IJsonHelper Json { get; private set; }
+        public global::Microsoft.AspNetCore.Mvc.Rendering.IJsonHelper Json { get; private set; } = default!;
+        #nullable disable
+        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper<IEnumerable<CongresoJuvenil2021.ViewModels.UsersPodCast>> Html { get; private set; }
+        public global::Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper<IEnumerable<CongresoJuvenil2021.ViewModels.UsersPodCast>> Html { get; private set; } = default!;
+        #nullable disable
     }
 }
 #pragma warning restore 1591
