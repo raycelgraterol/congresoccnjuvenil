@@ -90,13 +90,18 @@ body {
 }
 
 .moxa-btn {
-    background-color: #d8dadb;
-    color: #5d5d5d;
+    background-color: #3a42e1;
+    color: white;
     font-weight: 600;
 }
 
+    .moxa-btn:hover {
+        color: white;
+        background-color: #757bfb;
+    }
+
 .moxa-arrow {
-    background-color: #8c8c8c;
+    background-color: #3a42e1;
     font-weight: bold;
     border-radius: 2px;
     height: 30px;

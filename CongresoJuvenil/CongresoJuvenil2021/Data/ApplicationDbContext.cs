@@ -84,25 +84,37 @@ namespace CongresoJuvenil2021.Data
                   new Team
                   {
                       Id = 1,
-                      Name = "M-1 MOXAGUILAS",
+                      Name = "Equipo 1 Guardianes",
                       Link = "https://t.me/joinchat/HZegqf-GylxlMWUx"
                   },
                   new Team
                   {
                       Id = 2,
-                      Name = "M-2 Manada Divergente",
+                      Name = "Equipo-2 Transformados",
                       Link = "https://t.me/joinchat/WHUPm1WLCWZjYjAx"
                   },
                   new Team
                   {
                       Id = 3,
-                      Name = "M-3 LEGENDARIOS",
+                      Name = "Equipo-3 Trascendentes",
                       Link = "https://t.me/joinchat/BmGdsXc_nUU1OTNh"
                   },
                   new Team
                   {
                       Id = 4,
-                      Name = "M-4 JUVENTUD DIVERGENTE",
+                      Name = "Equipo-4 Titanes",
+                      Link = "https://t.me/joinchat/cdnPblmq7C0wMzVh"
+                  },
+                  new Team
+                  {
+                      Id = 5,
+                      Name = "Equipo-5 Rompetechos",
+                      Link = "https://t.me/joinchat/cdnPblmq7C0wMzVh"
+                  },
+                  new Team
+                  {
+                      Id = 6,
+                      Name = "Equipo-6 Centinelas",
                       Link = "https://t.me/joinchat/cdnPblmq7C0wMzVh"
                   }
               );
@@ -112,51 +124,23 @@ namespace CongresoJuvenil2021.Data
                  new PodCast
                  {
                      Id = 1,
-                     Name = "Alabanza y adoración",
+                     Name = "Jueves - Día 1",
                      Link = "#",
-                     TransmissionDate = DateTime.ParseExact("2021-08-25 14:50", "yyyy-MM-dd HH:mm", null)
+                     TransmissionDate = DateTime.ParseExact("2022-08-01 08:00", "yyyy-MM-dd HH:mm", null)
                  },
                  new PodCast
                  {
                      Id = 2,
-                     Name = "Vocación, visión, llamado y productividad",
+                     Name = "Viernes - Día 2",
                      Link = "#",
-                     TransmissionDate = DateTime.ParseExact("2021-08-25 15:50", "yyyy-MM-dd HH:mm", null)
+                     TransmissionDate = DateTime.ParseExact("2022-08-01 08:00", "yyyy-MM-dd HH:mm", null)
                  },
                  new PodCast
                  {
                      Id = 3,
-                     Name = "Pandemia de Amor",
+                     Name = "Sabado - Día 3",
                      Link = "#",
-                     TransmissionDate = DateTime.ParseExact("2021-08-25 16:50", "yyyy-MM-dd HH:mm", null)
-                 },
-                 new PodCast
-                 {
-                     Id = 4,
-                     Name = "Desenmascarando la ideología de género",
-                     Link = "#",
-                     TransmissionDate = DateTime.ParseExact("2021-08-25 17:45", "yyyy-MM-dd HH:mm", null)
-                 },
-                 new PodCast
-                 {
-                     Id = 5,
-                     Name = "Visión, emprendimiento y libertad financiera",
-                     Link = "#",
-                     TransmissionDate = DateTime.ParseExact("2021-08-26 14:50", "yyyy-MM-dd HH:mm", null)
-                 },
-                 new PodCast
-                 {
-                     Id = 6,
-                     Name = "¿Y cómo funciona esto? Especial para novios",
-                     Link = "#",
-                     TransmissionDate = DateTime.ParseExact("2021-08-26 15:55", "yyyy-MM-dd HH:mm", null)
-                 },
-                 new PodCast
-                 {
-                     Id = 7,
-                     Name = "Porque estar solo, nunca será mejor. Especial para solteros",
-                     Link = "#",
-                     TransmissionDate = DateTime.ParseExact("2021-08-26 16:55", "yyyy-MM-dd HH:mm", null)
+                     TransmissionDate = DateTime.ParseExact("2022-08-01 08:00", "yyyy-MM-dd HH:mm", null)
                  }
              );
 
@@ -803,7 +787,7 @@ namespace CongresoJuvenil2021.Data
                     new Congregation
                     {
                         Id = 107,
-                        Name = "Ninguna",
+                        Name = "Guanare",
                         Direction = ""
                     },
                     new Congregation
@@ -827,13 +811,13 @@ namespace CongresoJuvenil2021.Data
                     new Congregation
                     {
                         Id = 111,
-                        Name = "Guanare",
-                        Direction = ""
+                        Name = "",
+                        Direction = "Otra congregación"
                     },
                     new Congregation
                     {
                         Id = 112,
-                        Name = "Otra congregación",
+                        Name = "Ninguna",
                         Direction = ""
                     }
 

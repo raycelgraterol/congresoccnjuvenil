@@ -112,7 +112,6 @@ namespace CongresoJuvenil2021.Controllers
         {
             var resultTotals = (from T1 in _context.Teams
                                 join T2 in userManager.Users on T1.Id equals T2.TeamId
-                                where T2.IsReferred
                                 select new { Teams = T1, Users = T2 })
                           .ToList()
                           .GroupBy(
@@ -128,7 +127,6 @@ namespace CongresoJuvenil2021.Controllers
                           .ToList();
 
             var result = await userManager.Users.Include(t => t.Team).Include(c => c.Congregation)
-                            .Where(x => x.IsReferred)
                             .OrderBy(o => o.TeamId)
                             .ToListAsync();
 
@@ -205,7 +203,6 @@ namespace CongresoJuvenil2021.Controllers
         public IActionResult ExportDataTabletoExcel()
         {
             var result = userManager.Users.Include(t => t.Team).Include(c => c.Congregation)
-                               .Where(x => x.IsReferred)
                                .OrderBy(o => o.TeamId)
                                .ToList();
 

@@ -59,7 +59,6 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
         public string ErrorMessage { get; set; } = "";
 
         public int TeamId { get; set; }
-        public bool IsReferred { get; set; }
         public bool IsNewConverted { get; set; }
 
         public int minValue { 
@@ -154,15 +153,14 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
             else
             {
                 this.TeamId = rnd.Next(minValue, maxValue);
-                this.IsReferred = false;
             }
             
             Congregations = await listItemsCongregation();
         }
 
-        public async Task<IActionResult> OnPostAsync(string returnUrl = "~/Identity/Account/RegisterPodCast")
+        public async Task<IActionResult> OnPostAsync(string returnUrl = "~/Identity/Account/ResultPageInfo")
         {
-            ReturnUrl = returnUrl ?? Url.Content("~/Identity/Account/RegisterPodCast");
+            ReturnUrl = returnUrl ?? Url.Content("~/Identity/Account/ResultPageInfo");
 
             Input.CongregationId = Input.CongregationId == 0 ? 107 : Input.CongregationId;
 
@@ -187,9 +185,7 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
                         Twitter = Input.Twitter,
                         Facebook = Input.Facebook,
                         NeedContact = Input.NeedContact,
-                        IsReferred = false,
                         IsNewConverted = Input.IsNewConverted,
-                        ReferredBy = Input.ReferredBy
                     };
 
                     var result = await _userManager.CreateAsync(user, Input.Password);
@@ -229,8 +225,6 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
                     currentUser.Twitter = Input.Twitter;
                     currentUser.Facebook = Input.Facebook;
                     currentUser.NeedContact = Input.NeedContact;
-                    currentUser.ReferredBy = Input.ReferredBy;
-                    currentUser.IsReferred = Input.IsReferred;
 
                     var result = await _userManager.UpdateAsync(currentUser);
                     if (result.Succeeded)
@@ -256,10 +250,11 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
             return Page();
         }
 
+        #region private 
         private async Task<List<SelectListItem>> listItemsCongregation()
         {
             var items = await _context.Congregations
-                                    .OrderBy(x => x.Name)
+                                    .OrderBy(x => x.Id)
                                     .Select(x =>
                                         new SelectListItem
                                         {
@@ -274,5 +269,6 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
 
             return items;
         }
+        #endregion
     }
 }
