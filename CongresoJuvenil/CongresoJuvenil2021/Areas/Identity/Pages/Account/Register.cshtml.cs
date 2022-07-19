@@ -71,7 +71,7 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
         public int maxValue {
             get 
             {
-                return Convert.ToInt32(string.IsNullOrEmpty(_configuration["defaultValues:maxValue"]) ? "5" : _configuration["defaultValues:maxValue"]);
+                return Convert.ToInt32(string.IsNullOrEmpty(_configuration["defaultValues:maxValue"]) ? "7" : _configuration["defaultValues:maxValue"]);
             }
         }
 
@@ -138,6 +138,9 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
 
             [Display(Name = "En caso de no pertenecer a algún CCN")]
             public bool NeedContact { get; set; } = false;
+
+            [Display(Name = "Asistencia al congreso")]
+            public int TypeVisitors { get; set; } = 1;
         }
 
         public async Task OnGetAsync(string returnUrl = null, int teamId = 0)
@@ -186,6 +189,7 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
                         Facebook = Input.Facebook,
                         NeedContact = Input.NeedContact,
                         IsNewConverted = Input.IsNewConverted,
+                        TypeVisitors = Input.TypeVisitors,
                     };
 
                     var result = await _userManager.CreateAsync(user, Input.Password);
@@ -225,6 +229,7 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
                     currentUser.Twitter = Input.Twitter;
                     currentUser.Facebook = Input.Facebook;
                     currentUser.NeedContact = Input.NeedContact;
+                    currentUser.TypeVisitors = Input.TypeVisitors;
 
                     var result = await _userManager.UpdateAsync(currentUser);
                     if (result.Succeeded)

@@ -85,37 +85,37 @@ namespace CongresoJuvenil2021.Data
                   {
                       Id = 1,
                       Name = "Equipo 1 Guardianes",
-                      Link = "https://t.me/joinchat/HZegqf-GylxlMWUx"
+                      Link = "https://t.me/+lb3zWHUEX_RlZDlh"
                   },
                   new Team
                   {
                       Id = 2,
                       Name = "Equipo-2 Transformados",
-                      Link = "https://t.me/joinchat/WHUPm1WLCWZjYjAx"
+                      Link = "https://t.me/+scShTrVhdJ1kMjJh"
                   },
                   new Team
                   {
                       Id = 3,
                       Name = "Equipo-3 Trascendentes",
-                      Link = "https://t.me/joinchat/BmGdsXc_nUU1OTNh"
+                      Link = "https://t.me/+igdFNnHL5k5iMTNh"
                   },
                   new Team
                   {
                       Id = 4,
                       Name = "Equipo-4 Titanes",
-                      Link = "https://t.me/joinchat/cdnPblmq7C0wMzVh"
+                      Link = "https://t.me/+YFa4bjX2QD43M2Zh"
                   },
                   new Team
                   {
                       Id = 5,
                       Name = "Equipo-5 Rompetechos",
-                      Link = "https://t.me/joinchat/cdnPblmq7C0wMzVh"
+                      Link = "https://t.me/+1KPM9wahKmw1NTEx"
                   },
                   new Team
                   {
                       Id = 6,
                       Name = "Equipo-6 Centinelas",
-                      Link = "https://t.me/joinchat/cdnPblmq7C0wMzVh"
+                      Link = "https://t.me/+64zUs09alEg5NzYx"
                   }
               );
 

@@ -17,7 +17,7 @@ namespace CongresoJuvenil2021.Services
             _configuration = configuration;
         }
 
-        public async Task Send(string to, string subject, string html, string from = "info@congresoccnjuvenil.com")
+        public async Task Send(string to, string subject, string html, string from = "info@ccnjuvenil.com")
         {
             try
             {
@@ -26,7 +26,7 @@ namespace CongresoJuvenil2021.Services
                 //create message
                 var email = new MimeMessage();
                 var address = MailboxAddress.Parse(from);
-                address.Name = "Congreso Juvenil 2021";
+                address.Name = "Congreso Juvenil MOXA";
                 email.From.Add(address);
                 email.To.Add(MailboxAddress.Parse(to));
                 email.Subject = subject;

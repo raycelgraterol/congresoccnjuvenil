@@ -69,28 +69,6 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-12">
-                    <div class="form-group">
-                        <label class="moxa-lbl-lg">Si eres parte de algún CCN, escoja la congregación a la que pertenece.</label>
-                        <select asp-for="Input.CongregationId" asp-items="Model.Congregations" class="form-control"></select>
-                    </div>
-                </div>
-                <div class="col-12 col-md-12">
-                    <div class="form-group">
-                        <label class="moxa-lbl-lg" asp-for="Input.NeedContact"></label>
-                        <label class="moxa-lbl-lg">¿Deseas que nos coloquemos en contacto contigo?</label>
-                        <div class="form-group">
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" asp-for="Input.NeedContact" id="inlineRadio1" checked="checked" value="true">
-                                <label class="form-check-label" for="inlineRadio1">SI</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" asp-for="Input.NeedContact" id="inlineRadio2" value="false">
-                                <label class="form-check-label" for="inlineRadio2">NO</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="col-12 col-md-6">
                     <div class="form-group">
                         <label class="moxa-lbl" asp-for="Input.Instagram"></label>
@@ -115,10 +93,60 @@
                         <input asp-for="Input.Twitter" class="form-control" />
                     </div>
                 </div>
+
+                <div class="col-12 col-md-12">
+                    <div class="form-group">
+                        <label class="moxa-lbl-lg">Si eres parte de algún CCN, escoja la congregación a la que pertenece.</label>
+                        <select asp-for="Input.CongregationId" asp-items="Model.Congregations" class="form-control"></select>
+                    </div>
+                </div>
+                <div class="col-12 col-md-12">
+                    <div class="form-group">
+                        <label class="moxa-lbl-lg" asp-for="Input.NeedContact"></label>
+                        <label class="moxa-lbl-lg">¿Deseas que nos coloquemos en contacto contigo?</label>
+                        <div class="form-group">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" asp-for="Input.NeedContact" id="inlineRadio1" checked="checked" value="true">
+                                <label class="form-check-label" for="inlineRadio1">SI</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" asp-for="Input.NeedContact" id="inlineRadio2" value="false">
+                                <label class="form-check-label" for="inlineRadio2">NO</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="col-12">
                     <div class="form-group">
-                        <input type="hidden" asp-for="Input.Password" class="form-control" value="Juv&Fam0426*#." />
-                        <input type="hidden" asp-for="Input.ConfirmPassword" class="form-control" value="Juv&Fam0426*#." />
+                        <label class="moxa-lbl-lg">
+                            Como este congreso será presencial, ¿Deseas asistir del 1 al 3 de septiembre?
+                        </label>
+                        <div class="form-group">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" asp-for="Input.TypeVisitors" id="typeRadio1" checked="checked" value="1">
+                                <label class="form-check-label" for="typeRadio1">Sí asistiré los 3 días presenciales.</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" asp-for="Input.TypeVisitors" id="typeRadio2" value="2">
+                                <label class="form-check-label" for="typeRadio2">No puedo asistir los 3 días completos, pero sí algunos.</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" asp-for="Input.TypeVisitors" id="typeRadio3" value="3">
+                                <label class="form-check-label" for="typeRadio3">Aún no estoy seguro si podré asistir.</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" asp-for="Input.TypeVisitors" id="typeRadio4" value="4">
+                                <label class="form-check-label" for="typeRadio4">No podré asistir, lo veré por el canal de YouTube de CCN Juvenil.</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="form-group">
+                        <input type="hidden" asp-for="Input.Password" class="form-control" value="Juv&Fam2022*#." />
+                        <input type="hidden" asp-for="Input.ConfirmPassword" class="form-control" value="Juv&Fam2022*#." />
                     </div>
                 </div>
             </div>
@@ -134,6 +162,6 @@
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
     <script>
-        $(".moxa-banner").css("height", $('html').height());
+            //$(".moxa-banner").css("height", $('html').height());
     </script>
 }

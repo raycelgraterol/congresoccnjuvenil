@@ -80,6 +80,8 @@ namespace CongresoJuvenil2021.Models
             }
         }
 
+        public int TypeVisitors { get; set; }
+
         public List<PodCastUser> PodCasts { get; set; }
     }
 }
