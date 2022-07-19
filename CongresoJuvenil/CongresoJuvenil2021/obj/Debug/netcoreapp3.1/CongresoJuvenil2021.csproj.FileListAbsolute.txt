@@ -482,4 +482,3 @@ C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Debug
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Debug\netcoreapp3.1\Razor\Views\Users\UsersByCongregation.cshtml.g.cs
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Debug\netcoreapp3.1\CongresoJuvenil2021.GeneratedMSBuildEditorConfig.editorconfig
 C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Debug\netcoreapp3.1\Razor\Views\Dashboard\UserNewConverted.cshtml.g.cs
-C:\repositories\congresoccnjuvenil\CongresoJuvenil\CongresoJuvenil2021\obj\Debug\netcoreapp3.1\CongresoJuvenil2021.csproj.AssemblyReference.cache
