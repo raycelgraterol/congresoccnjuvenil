@@ -57,7 +57,7 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
             var stringHTML = string.Format(
                     @"
                     <div style='text-align: center; padding:5px; margin-bottom:10px'>
-                        <img width='900px' height='auto' src='https://congresojuvenilccn.com/img/banner-correo.png' alt='Alternate Text' />
+                        <img width='900px' height='auto' src='https://www.congreso.ccnjuvenil.com/img/banner-correo.png' alt='Alternate Text' />
                     </div>
                     <div style='text-align: center; padding:5px;'>                        
                         <h2>¡Bienvenidos a la primera fase del congreso: operación MOXA!</h2>
