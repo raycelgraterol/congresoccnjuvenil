@@ -742,3 +742,86 @@ END;
 
 GO
 
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20220719025413_Teams with telegram')
+BEGIN
+    UPDATE [Teams] SET [Link] = N'https://t.me/+lb3zWHUEX_RlZDlh'
+    WHERE [Id] = 1;
+    SELECT @@ROWCOUNT;
+
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20220719025413_Teams with telegram')
+BEGIN
+    UPDATE [Teams] SET [Link] = N'https://t.me/+scShTrVhdJ1kMjJh'
+    WHERE [Id] = 2;
+    SELECT @@ROWCOUNT;
+
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20220719025413_Teams with telegram')
+BEGIN
+    UPDATE [Teams] SET [Link] = N'https://t.me/+igdFNnHL5k5iMTNh'
+    WHERE [Id] = 3;
+    SELECT @@ROWCOUNT;
+
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20220719025413_Teams with telegram')
+BEGIN
+    UPDATE [Teams] SET [Link] = N'https://t.me/+YFa4bjX2QD43M2Zh'
+    WHERE [Id] = 4;
+    SELECT @@ROWCOUNT;
+
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20220719025413_Teams with telegram')
+BEGIN
+    UPDATE [Teams] SET [Link] = N'https://t.me/+1KPM9wahKmw1NTEx'
+    WHERE [Id] = 5;
+    SELECT @@ROWCOUNT;
+
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20220719025413_Teams with telegram')
+BEGIN
+    UPDATE [Teams] SET [Link] = N'https://t.me/+64zUs09alEg5NzYx'
+    WHERE [Id] = 6;
+    SELECT @@ROWCOUNT;
+
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20220719025413_Teams with telegram')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20220719025413_Teams with telegram', N'3.1.17');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20220719032945_Type Visitors')
+BEGIN
+    ALTER TABLE [User] ADD [TypeVisitors] int NOT NULL DEFAULT 1;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20220719032945_Type Visitors')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20220719032945_Type Visitors', N'3.1.17');
+END;
+
+GO
+
