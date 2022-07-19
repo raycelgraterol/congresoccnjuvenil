@@ -139,8 +139,10 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
             [Display(Name = "En caso de no pertenecer a algún CCN")]
             public bool NeedContact { get; set; } = false;
 
-            [Display(Name = "Asistencia al congreso")]
-            public int TypeVisitors { get; set; } = 1;
+            [Display(Name = "¿Por qué quiero inscribirme en MOXA 2022?")]
+            [StringLength(500)]
+            [Required(ErrorMessage = "Dejanos un comentario.")]
+            public string CommentMOXA2022 { get; set; }
         }
 
         public async Task OnGetAsync(string returnUrl = null, int teamId = 0)
@@ -189,7 +191,7 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
                         Facebook = Input.Facebook,
                         NeedContact = Input.NeedContact,
                         IsNewConverted = Input.IsNewConverted,
-                        TypeVisitors = Input.TypeVisitors,
+                        CommentMOXA2022 = Input.CommentMOXA2022,
                     };
 
                     var result = await _userManager.CreateAsync(user, Input.Password);
@@ -229,7 +231,7 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
                     currentUser.Twitter = Input.Twitter;
                     currentUser.Facebook = Input.Facebook;
                     currentUser.NeedContact = Input.NeedContact;
-                    currentUser.TypeVisitors = Input.TypeVisitors;
+                    currentUser.CommentMOXA2022 = Input.CommentMOXA2022;
 
                     var result = await _userManager.UpdateAsync(currentUser);
                     if (result.Succeeded)

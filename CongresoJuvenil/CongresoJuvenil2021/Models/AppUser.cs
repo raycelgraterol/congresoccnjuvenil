@@ -50,6 +50,8 @@ namespace CongresoJuvenil2021.Models
         public Team Team { get; set; }
         public bool IsNewConverted { get; set; }
 
+        public string CommentMOXA2022 { get; set; }
+
         [Display(Name = "Nombre Completo")]
         [NotMapped]
         public string FullName
@@ -79,8 +81,6 @@ namespace CongresoJuvenil2021.Models
                 return Team == null ? "" : Team.Name;
             }
         }
-
-        public int TypeVisitors { get; set; }
 
         public List<PodCastUser> PodCasts { get; set; }
     }

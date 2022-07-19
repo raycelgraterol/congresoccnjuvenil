@@ -57,13 +57,13 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
             var stringHTML = string.Format(
                     @"
                     <div style='text-align: center; padding:5px; margin-bottom:10px'>
-                        <img width='900px' height='auto' src='https://www.congreso.ccnjuvenil.com/img/banner-correo.png' alt='Alternate Text' />
+                        <img width='900px' height='auto' src='https://www.congreso.ccnjuvenil.com/img/banner-correo.png' alt='MOXA' />
                     </div>
                     <div style='text-align: center; padding:5px;'>                        
                         <h2>¡Bienvenidos a la primera fase del congreso: operación MOXA!</h2>
                         <p style='font-size: 16px;'>Has sido seleccionado para formar parte del equipo {0}.</p>
                         <br />
-                        <p style='font-size: 16px;'>Este congreso consta de 3 fases, el cual, ya estamos listos para que inicies esta experiencia que tenemos preparada para el congreso.<p>
+                        <p style='font-size: 16px;'>¡Ya estamos listos para que inicies esta experiencia que tenemos preparada para ti!<p>
                         <br />
                         <p style='font-size: 16px;'>Aquí te dejamos el enlace de tu equipo</p>
                         <a href='{1}' style='color: #fff;background-color: #17a2b8;border-color: #17a2b8;text-decoration: none;padding: 10px;border-radius: .25rem;margin-bottom:10px;'>

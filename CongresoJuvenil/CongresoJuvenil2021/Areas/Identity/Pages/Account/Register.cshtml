@@ -36,35 +36,35 @@
                 <div class="col-12 col-md-4">
                     <div class="form-group">
                         <label class="moxa-lbl" asp-for="Input.FirstName"></label><span style="color:red">*</span>
-                        <input asp-for="Input.FirstName" class="form-control" placeholder="Primer Nombre" />
+                        <input asp-for="Input.FirstName" class="form-control" />
                         <span asp-validation-for="Input.FirstName" class="text-danger"></span>
                     </div>
                 </div>
                 <div class="col-12 col-md-4">
                     <div class="form-group">
                         <label class="moxa-lbl" asp-for="Input.LastName"></label><span style="color:red">*</span>
-                        <input asp-for="Input.LastName" class="form-control" placeholder="Apellido" />
+                        <input asp-for="Input.LastName" class="form-control" />
                         <span asp-validation-for="Input.LastName" class="text-danger"></span>
                     </div>
                 </div>
                 <div class="col-12 col-md-4">
                     <div class="form-group">
                         <label class="moxa-lbl" asp-for="Input.Age"></label><span style="color:red">*</span>
-                        <input asp-for="Input.Age" class="form-control" placeholder="16" />
+                        <input asp-for="Input.Age" class="form-control" />
                         <span asp-validation-for="Input.Age" class="text-danger"></span>
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="form-group">
                         <label class="moxa-lbl" asp-for="Input.Email"></label><span style="color:red">*</span>
-                        <input asp-for="Input.Email" class="form-control" placeholder="info@ccnjuvenil.com" />
+                        <input asp-for="Input.Email" class="form-control" />
                         <span asp-validation-for="Input.Email" class="text-danger"></span>
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="form-group">
                         <label class="moxa-lbl" asp-for="Input.PhoneNumber"></label><span style="color:red">*</span>
-                        <input asp-for="Input.PhoneNumber" class="form-control" placeholder="+58 414 000 0000" />
+                        <input asp-for="Input.PhoneNumber" class="form-control" />
                         <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
                     </div>
                 </div>
@@ -119,27 +119,9 @@
 
                 <div class="col-12">
                     <div class="form-group">
-                        <label class="moxa-lbl-lg">
-                            Como este congreso será presencial, ¿Deseas asistir del 1 al 3 de septiembre?
-                        </label>
-                        <div class="form-group">
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" asp-for="Input.TypeVisitors" id="typeRadio1" checked="checked" value="1">
-                                <label class="form-check-label" for="typeRadio1">Sí asistiré los 3 días presenciales.</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" asp-for="Input.TypeVisitors" id="typeRadio2" value="2">
-                                <label class="form-check-label" for="typeRadio2">No puedo asistir los 3 días completos, pero sí algunos.</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" asp-for="Input.TypeVisitors" id="typeRadio3" value="3">
-                                <label class="form-check-label" for="typeRadio3">Aún no estoy seguro si podré asistir.</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" asp-for="Input.TypeVisitors" id="typeRadio4" value="4">
-                                <label class="form-check-label" for="typeRadio4">No podré asistir, lo veré por el canal de YouTube de CCN Juvenil.</label>
-                            </div>
-                        </div>
+                        <label class="moxa-lbl" asp-for="Input.CommentMOXA2022"></label><span style="color:red">*</span>
+                        <input asp-for="Input.CommentMOXA2022" class="form-control" />
+                        <span asp-validation-for="Input.CommentMOXA2022" class="text-danger"></span>
                     </div>
                 </div>
 
