@@ -96,7 +96,7 @@
 
                 <div class="col-12 col-md-12">
                     <div class="form-group">
-                        <label class="moxa-lbl-lg">Si eres parte de algún CCN, escoja la congregación a la que pertenece.</label>
+                        <label class="moxa-lbl-lg">Si eres parte de algún CCN, escoge la congregación a la que pertenece.</label>
                         <select asp-for="Input.CongregationId" asp-items="Model.Congregations" class="form-control"></select>
                     </div>
                 </div>
@@ -119,7 +119,7 @@
 
                 <div class="col-12">
                     <div class="form-group">
-                        <label class="moxa-lbl" asp-for="Input.CommentMOXA2022"></label><span style="color:red">*</span>
+                        <label class="moxa-lbl-lg" asp-for="Input.CommentMOXA2022"></label><span style="color:red">*</span>
                         <input asp-for="Input.CommentMOXA2022" class="form-control" />
                         <span asp-validation-for="Input.CommentMOXA2022" class="text-danger"></span>
                     </div>

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "eS/Kdp+QXjW9mbzjUPpwlEYctg9a3duMD8LxqhlBnZqBTJZgjNnzbKL8CQQbSPZ3EJYvYUr8mydObVazMVS9Qw==",
+  "dgSpecHash": "WNQkIbimH7HoZ1dKyywKgfdNxHBYwkYwN6I1shG2FlyxrDaH9odzPpylQfqlbU0IMHvn45gU6c7p2vSb20PdcQ==",
   "success": true,
   "projectFilePath": "C:\\repositories\\congresoccnjuvenil\\CongresoJuvenil\\CongresoJuvenil2021\\CongresoJuvenil2021.csproj",
   "expectedPackageFiles": [
@@ -186,7 +186,8 @@
     "C:\\Users\\Admin\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\Admin\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    "C:\\Users\\Admin\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.25\\microsoft.netcore.app.host.win-x64.3.1.25.nupkg.sha512"
   ],
   "logs": []
 }
