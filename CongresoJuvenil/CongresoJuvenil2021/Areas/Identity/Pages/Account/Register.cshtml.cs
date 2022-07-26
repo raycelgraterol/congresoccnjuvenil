@@ -261,7 +261,7 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
         private async Task<List<SelectListItem>> listItemsCongregation()
         {
             var items = await _context.Congregations
-                                    .OrderBy(x => x.Id)
+                                    .OrderBy(x => x.Name)
                                     .Select(x =>
                                         new SelectListItem
                                         {

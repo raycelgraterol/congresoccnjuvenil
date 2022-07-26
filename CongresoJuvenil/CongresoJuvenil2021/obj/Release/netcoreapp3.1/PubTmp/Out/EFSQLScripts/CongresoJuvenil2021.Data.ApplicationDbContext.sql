@@ -861,3 +861,87 @@ END;
 
 GO
 
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20220725234906_New CCN')
+BEGIN
+    IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Direction', N'Name') AND [object_id] = OBJECT_ID(N'[Congregations]'))
+        SET IDENTITY_INSERT [Congregations] ON;
+    INSERT INTO [Congregations] ([Id], [Direction], [Name])
+    VALUES (113, N'', N'Sotillo');
+    IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Direction', N'Name') AND [object_id] = OBJECT_ID(N'[Congregations]'))
+        SET IDENTITY_INSERT [Congregations] OFF;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20220725234906_New CCN')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20220725234906_New CCN', N'3.1.17');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20220726000553_New CCN 25 julio 2022 agregadas congregaciones')
+BEGIN
+    UPDATE [Congregations] SET [Name] = N'Curiepe'
+    WHERE [Id] = 36;
+    SELECT @@ROWCOUNT;
+
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20220726000553_New CCN 25 julio 2022 agregadas congregaciones')
+BEGIN
+    UPDATE [Congregations] SET [Name] = N'San Juan de los Morros'
+    WHERE [Id] = 39;
+    SELECT @@ROWCOUNT;
+
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20220726000553_New CCN 25 julio 2022 agregadas congregaciones')
+BEGIN
+    IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Direction', N'Name') AND [object_id] = OBJECT_ID(N'[Congregations]'))
+        SET IDENTITY_INSERT [Congregations] ON;
+    INSERT INTO [Congregations] ([Id], [Direction], [Name])
+    VALUES (114, N'', N'23 de enero'),
+    (115, N'', N'Carayaca'),
+    (116, N'', N'Caucaguita'),
+    (117, N'', N'Santa Lucía'),
+    (118, N'', N'Palo Negro'),
+    (119, N'', N'Pijiguaos'),
+    (120, N'', N'San felix');
+    IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Direction', N'Name') AND [object_id] = OBJECT_ID(N'[Congregations]'))
+        SET IDENTITY_INSERT [Congregations] OFF;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20220726000553_New CCN 25 julio 2022 agregadas congregaciones')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20220726000553_New CCN 25 julio 2022 agregadas congregaciones', N'3.1.17');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20220726022159_Fixed error another congregations')
+BEGIN
+    UPDATE [Congregations] SET [Direction] = N'', [Name] = N'Otra congregación'
+    WHERE [Id] = 111;
+    SELECT @@ROWCOUNT;
+
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20220726022159_Fixed error another congregations')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20220726022159_Fixed error another congregations', N'3.1.17');
+END;
+
+GO
+

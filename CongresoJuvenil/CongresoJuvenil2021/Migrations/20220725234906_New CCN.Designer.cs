@@ -4,14 +4,16 @@ using CongresoJuvenil2021.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CongresoJuvenil2021.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220725234906_New CCN")]
+    partial class NewCCN
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -364,7 +366,7 @@ namespace CongresoJuvenil2021.Migrations
                         {
                             Id = 36,
                             Direction = "",
-                            Name = "Curiepe"
+                            Name = "CT Curiepe"
                         },
                         new
                         {
@@ -382,7 +384,7 @@ namespace CongresoJuvenil2021.Migrations
                         {
                             Id = 39,
                             Direction = "",
-                            Name = "San Juan de los Morros"
+                            Name = "Guárico"
                         },
                         new
                         {
@@ -813,8 +815,8 @@ namespace CongresoJuvenil2021.Migrations
                         new
                         {
                             Id = 111,
-                            Direction = "",
-                            Name = "Otra congregación"
+                            Direction = "Otra congregación",
+                            Name = ""
                         },
                         new
                         {
@@ -827,48 +829,6 @@ namespace CongresoJuvenil2021.Migrations
                             Id = 113,
                             Direction = "",
                             Name = "Sotillo"
-                        },
-                        new
-                        {
-                            Id = 114,
-                            Direction = "",
-                            Name = "23 de enero"
-                        },
-                        new
-                        {
-                            Id = 115,
-                            Direction = "",
-                            Name = "Carayaca"
-                        },
-                        new
-                        {
-                            Id = 116,
-                            Direction = "",
-                            Name = "Caucaguita"
-                        },
-                        new
-                        {
-                            Id = 117,
-                            Direction = "",
-                            Name = "Santa Lucía"
-                        },
-                        new
-                        {
-                            Id = 118,
-                            Direction = "",
-                            Name = "Palo Negro"
-                        },
-                        new
-                        {
-                            Id = 119,
-                            Direction = "",
-                            Name = "Pijiguaos"
-                        },
-                        new
-                        {
-                            Id = 120,
-                            Direction = "",
-                            Name = "San felix"
                         });
                 });
 

@@ -361,7 +361,7 @@ namespace CongresoJuvenil2021.Data
                     new Congregation
                     {
                         Id = 36,
-                        Name = "CT Curiepe",
+                        Name = "Curiepe",
                         Direction = ""
                     },
                     new Congregation
@@ -379,7 +379,7 @@ namespace CongresoJuvenil2021.Data
                     new Congregation
                     {
                         Id = 39,
-                        Name = "Guárico",
+                        Name = "San Juan de los Morros",
                         Direction = ""
                     },
                     new Congregation
@@ -811,16 +811,63 @@ namespace CongresoJuvenil2021.Data
                     new Congregation
                     {
                         Id = 111,
-                        Name = "",
-                        Direction = "Otra congregación"
+                        Name = "Otra congregación",
+                        Direction = ""
                     },
                     new Congregation
                     {
                         Id = 112,
                         Name = "Ninguna",
                         Direction = ""
+                    },//Agregadas 2022
+                    new Congregation
+                    {
+                        Id = 113,
+                        Name = "Sotillo",
+                        Direction = ""
+                    },
+                    new Congregation
+                    {
+                        Id = 114,
+                        Name = "23 de enero",
+                        Direction = ""
+                    },
+                    new Congregation
+                    {
+                        Id = 115,
+                        Name = "Carayaca",
+                        Direction = ""
+                    },
+                    new Congregation
+                    {
+                        Id = 116,
+                        Name = "Caucaguita",
+                        Direction = ""
+                    },
+                    new Congregation
+                    {
+                        Id = 117,
+                        Name = "Santa Lucía",
+                        Direction = ""
+                    },
+                    new Congregation
+                    {
+                        Id = 118,
+                        Name = "Palo Negro",
+                        Direction = ""
+                    },
+                    new Congregation
+                    {
+                        Id = 119,
+                        Name = "Pijiguaos",
+                        Direction = ""
+                    },
+                    new Congregation
+                    {
+                        Id = 120,
+                        Name = "San felix",
+                        Direction = ""
                     }
-
               );
             #endregion
 
