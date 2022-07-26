@@ -53,6 +53,7 @@ namespace CongresoJuvenil2021.Controllers
                                 CongregationName = key.Name,
                                 TotalUser = g.Count()
                             })
+                          .OrderBy(x => x.CongregationName)
                           .ToList();
 
             ViewBag.CountTotal = userManager.Users.Count();
