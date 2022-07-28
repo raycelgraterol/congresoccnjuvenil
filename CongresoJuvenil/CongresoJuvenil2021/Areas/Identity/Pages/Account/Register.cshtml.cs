@@ -18,6 +18,7 @@ using CongresoJuvenil2021.Data;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
 {
@@ -111,8 +112,10 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
             [Range(1, 120)]
             public int Age { get; set; }
 
-            [Display(Name = "Sede CCN")]
-            public int CongregationId { get; set; }
+            [Required(ErrorMessage = "La Congregación es necesaria.")]
+            [BindRequired]
+            [Display(Name = "Si eres parte de algún CCN, escoge la congregación a la que pertenece.")]
+            public int? CongregationId { get; set; } = null;
 
             [Required]
             [Display(Name = "Equipo")]
@@ -167,7 +170,7 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
         {
             ReturnUrl = returnUrl ?? Url.Content("~/Identity/Account/ResultPageInfo");
 
-            Input.CongregationId = Input.CongregationId == 0 ? 107 : Input.CongregationId;
+            Input.CongregationId = (Input.CongregationId == null | Input.CongregationId == 0) ? 112 : Input.CongregationId;
 
             var currentUser = await _userManager.FindByEmailAsync(Input.Email);
 
@@ -182,7 +185,7 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
                         LastName = Input.LastName,
                         Email = Input.Email,
                         TeamId = Input.TeamId,
-                        CongregationId = Input.CongregationId,
+                        CongregationId = (int)Input.CongregationId,
                         PhoneNumber = Input.PhoneNumber,
                         Age = Input.Age,
                         Instagram = Input.Instagram,
@@ -225,7 +228,7 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
                     currentUser.LastName = Input.LastName;
                     currentUser.Age = Input.Age;
                     currentUser.PhoneNumber = Input.PhoneNumber;
-                    currentUser.CongregationId = Input.CongregationId;
+                    currentUser.CongregationId = (int)Input.CongregationId;
                     currentUser.Instagram = Input.Instagram;
                     currentUser.TikTok = Input.TikTok;
                     currentUser.Twitter = Input.Twitter;
@@ -271,9 +274,6 @@ namespace CongresoJuvenil2021.Areas.Identity.Pages.Account
                                         }
                                     )
                                     .ToListAsync();
-
-            items.Insert(0, new SelectListItem() { Value = "0", Text = "Seleccione su congregación", Selected = true });
-
             return items;
         }
         #endregion

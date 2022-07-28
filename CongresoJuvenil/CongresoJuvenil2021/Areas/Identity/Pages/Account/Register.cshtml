@@ -4,7 +4,11 @@
     ViewData["Title"] = "MOXA · SANGRE, ESPÍRITU Y GRACIA";
     Layout = "~/Views/Shared/_blackLayout.cshtml";
 }
-
+<style>
+    .field-validation-valid {
+        display: none;
+    }
+</style>
 <div class="row">
     <div class="d-none d-sm-block col-md-5">
         <div class="moxa-banner">
@@ -96,8 +100,11 @@
 
                 <div class="col-12 col-md-12">
                     <div class="form-group">
-                        <label class="moxa-lbl-lg">Si eres parte de algún CCN, escoge la congregación a la que pertenece.</label>
-                        <select asp-for="Input.CongregationId" asp-items="Model.Congregations" class="form-control"></select>
+                        <label class="moxa-lbl-lg" asp-for="Input.CongregationId"></label>
+                        <select asp-for="Input.CongregationId" asp-items="Model.Congregations" class="form-control">
+                            <option value="" hidden disabled selected>Seleccione una congregacion</option>
+                        </select>
+                        <span asp-validation-for="Input.CongregationId" class="text-danger"></span>
                     </div>
                 </div>
                 <div class="col-12 col-md-12">
